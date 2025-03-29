@@ -1,0 +1,46 @@
+<!-- Page Banner -->
+<div class="page-banner-area bg-3 ptb-100">
+    <div class="container">
+        <div class="page-banner-content">
+            <h2>Sign In</h2>
+            <ul>
+                <li>
+                    <a routerLink="/">
+                        Home
+                    </a>
+                </li>
+                <li>Sign In</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Sign In -->
+<div class="sign-in-area ptb-100">
+    <div class="container">
+        <div class="sign-in-form">
+            <h2>Sign In Here</h2>
+            <p>Welcome Back, Sign In To Your Account</p>
+            <form  [formGroup]="loginFormGroup" (ngSubmit)="login()">
+                <div class="form-group">
+                    <label>User Name or Email Address *</label>
+                    <input type="text" class="form-control" placeholder="User name or email address"formControlName="userName">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="text" class="form-control" placeholder="Password"formControlName="password">
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Remember me
+                    </label>
+                </div>
+                <button type="submit" class="default-btn">Login Now</button>
+                <div class="account-text">
+                    <span>Don’t have an account? <a routerLink="/sign-up">Create Account</a></span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

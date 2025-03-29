@@ -1,0 +1,156 @@
+<!-- Default Blog -->
+<div 
+    class="blog-posts-area bg-0b0133 ptb-100"
+    [ngClass]="{'bg-ffffff' : router.url === '/index-2', 'd-none' : router.url === '/index-3'}"
+>
+    <div class="container">
+        <div class="section-title d-flex align-items-center justify-content-between">
+            <h2 class="heading-title">Latest Posts</h2>
+            <a routerLink="/blog">Browse All Posts <i class="ri-arrow-right-s-line"></i></a>
+        </div>
+        <div class="blog-posts-slides">
+            <owl-carousel-o [options]="blogSlides">
+                <ng-template carouselSlide>
+                    <div class="single-blog-posts-card">
+                        <div class="posts-image">
+                            <a routerLink="/blog-details">
+                                <img src="assets/images/blog/blog-1.jpg" alt="image">
+                            </a>
+                        </div>
+                        <div class="posts-content">
+                            <span>4st Dec, 2024</span>
+                            <h3>
+                                <a routerLink="/blog-details">
+                                    How Podcast Helps You to Gather Your Audience in a Platform
+                                </a>
+                            </h3>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="single-blog-posts-card">
+                        <div class="posts-image">
+                            <a routerLink="/blog-details">
+                                <img src="assets/images/blog/blog-2.jpg" alt="image">
+                            </a>
+                        </div>
+                        <div class="posts-content">
+                            <span>3st Dec, 2024</span>
+                            <h3>
+                                <a routerLink="/blog-details">
+                                    Women's Sports With Goca from Comedy has an Ouchie
+                                </a>
+                            </h3>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="single-blog-posts-card">
+                        <div class="posts-image">
+                            <a routerLink="/blog-details">
+                                <img src="assets/images/blog/blog-3.jpg" alt="image">
+                            </a>
+                        </div>
+                        <div class="posts-content">
+                            <span>2st Dec, 2024</span>
+                            <h3>
+                                <a routerLink="/blog-details">
+                                    How to Choose the Right Rating for Your Podcast & why Important
+                                </a>
+                            </h3>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="single-blog-posts-card">
+                        <div class="posts-image">
+                            <a routerLink="/blog-details">
+                                <img src="assets/images/blog/blog-4.jpg" alt="image">
+                            </a>
+                        </div>
+                        <div class="posts-content">
+                            <span>1st Dec, 2024</span>
+                            <h3>
+                                <a routerLink="/blog-details">
+                                    How I Podcast: In Conversation Angela Belt "The Mood Board"
+                                </a>
+                            </h3>
+                        </div>
+                    </div>
+                </ng-template>
+            </owl-carousel-o>
+        </div>
+    </div>
+</div>
+
+<!-- Blog Only for Home Demo - 3 -->
+<div 
+    class="blog-area bg-ffffff ptb-100 pb-75 d-none"
+    [ngClass]="{'d-block' : router.url === '/index-3'}"
+>
+    <div class="container">
+        <div class="section-title d-flex align-items-center justify-content-between">
+            <h2 class="heading-title">Latest Posts</h2>
+            <a routerLink="/blog">Browse All Posts <i class="ri-arrow-right-s-line"></i></a>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6">
+                <div class="single-blog-card">
+                    <div class="posts-image">
+                        <a routerLink="/blog-details">
+                            <img src="assets/images/blog/blog-2.jpg" alt="image">
+                        </a>
+                    </div>
+                    <div class="posts-content">
+                        <h3>
+                            <a routerLink="/blog-details">
+                                How Podcast Helps You To Gather Your Audience In A Platform
+                            </a>
+                        </h3>
+                    </div>
+                    <div class="sub-meta-date">
+                        <span>3st Dec, 2024</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-blog-card">
+                    <div class="posts-image">
+                        <a routerLink="/blog-details">
+                            <img src="assets/images/blog/blog-3.jpg" alt="image">
+                        </a>
+                    </div>
+                    <div class="posts-content">
+                        <h3>
+                            <a routerLink="/blog-details">
+                                How Podcast Help In Developing Mental Health
+                            </a>
+                        </h3>
+                    </div>
+                    <div class="sub-meta-date">
+                        <span>2st Dec, 2024</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-blog-card">
+                    <div class="posts-image">
+                        <a routerLink="/blog-details">
+                            <img src="assets/images/blog/blog-4.jpg" alt="image">
+                        </a>
+                    </div>
+                    <div class="posts-content">
+                        <h3>
+                            <a routerLink="/blog-details">
+                                Women's Sports with Ashley White hurst from Comedy Has An Ouchie
+                            </a>
+                        </h3>
+                    </div>
+                    <div class="sub-meta-date">
+                        <span>1st Dec, 2024</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,96 @@
+<!-- Default Testimonials -->
+<div 
+    class="testimonials-area-with-bg-image ptb-100"
+    [ngClass]="{'d-none' : router.url === '/index-2'}"
+>
+    <div class="container">
+        <div class="testimonials-slides">
+            <owl-carousel-o [options]="testimonialsSlides">
+                <ng-template carouselSlide>
+                    <div class="single-testimonials-card">
+                        <div class="testimonials-content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit elementum sed diam luctus etiam amet diam idit erat molestie ac magna diam tui vitae suspendisse a libero libero potenti dui sem ut et vestibulumi meau pellentesque euismod odio proin curabitur molestie.</p>
+                            <div class="info">
+                                <img src="assets/images/testimonials/testimonials-1.jpg" alt="image">
+                                <h3>Jacob Linoski</h3>
+                                <span>Art Directory</span>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="single-testimonials-card">
+                        <div class="testimonials-content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit elementum sed diam luctus etiam amet diam idit erat molestie ac magna diam tui vitae suspendisse a libero libero potenti dui sem ut et vestibulumi meau pellentesque euismod odio proin curabitur molestie.</p>
+                            <div class="info">
+                                <img src="assets/images/testimonials/testimonials-2.jpg" alt="image">
+                                <h3>Patric Burner</h3>
+                                <span>Creative Strategist</span>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="single-testimonials-card">
+                        <div class="testimonials-content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit elementum sed diam luctus etiam amet diam idit erat molestie ac magna diam tui vitae suspendisse a libero libero potenti dui sem ut et vestibulumi meau pellentesque euismod odio proin curabitur molestie.</p>
+                            <div class="info">
+                                <img src="assets/images/testimonials/testimonials-3.jpg" alt="image">
+                                <h3>Jacob Linoski</h3>
+                                <span>Art Directory</span>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </owl-carousel-o>
+        </div>
+    </div>
+    <div class="testimonials-goca"><img src="assets/images/testimonials/goca-2.png" alt="image"></div>
+</div>
+
+<!-- Testimonials Only for Home Demo - 2 -->
+<div 
+    class="testimonials-area ptb-100 d-none"
+    [ngClass]="{'d-block' : router.url === '/index-2'}"
+>
+    <div class="container">
+        <div class="testimonials-slides style-two">
+            <owl-carousel-o [options]="testimonialsSlides">
+                <ng-template carouselSlide>
+                    <div class="single-testimonials-card">
+                        <div class="testimonials-content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit elementum sed diam luctus etiam amet diam idit erat molestie ac magna diam tui vitae suspendisse a libero libero potenti dui sem ut et vestibulumi meau pellentesque euismod odio proin curabitur molestie.</p>
+                            <div class="info">
+                                <h3>Jacob Linoski</h3>
+                                <span>Art Directory</span>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="single-testimonials-card">
+                        <div class="testimonials-content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit elementum sed diam luctus etiam amet diam idit erat molestie ac magna diam tui vitae suspendisse a libero libero potenti dui sem ut et vestibulumi meau pellentesque euismod odio proin curabitur molestie.</p>
+                            <div class="info">
+                                <h3>Patric Burner</h3>
+                                <span>Creative Strategist</span>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="single-testimonials-card">
+                        <div class="testimonials-content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit elementum sed diam luctus etiam amet diam idit erat molestie ac magna diam tui vitae suspendisse a libero libero potenti dui sem ut et vestibulumi meau pellentesque euismod odio proin curabitur molestie.</p>
+                            <div class="info">
+                                <h3>Jacob Linoski</h3>
+                                <span>Art Directory</span>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </owl-carousel-o>
+        </div>
+    </div>
+    <div class="testimonials-goca"><img src="assets/images/testimonials/goca.png" alt="image"></div>
+</div>

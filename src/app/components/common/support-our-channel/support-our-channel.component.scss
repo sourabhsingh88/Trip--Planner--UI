@@ -1,0 +1,164 @@
+.overview-area {
+    z-index: 1;
+    position: relative;
+    background: {
+        image: url(../../../../assets/images/overview-bg.jpg);
+        position: center center;
+        repeat: no-repeat;
+        size: cover;
+    };
+    &::before {
+        background: var(--black-color);
+        position: absolute;
+        height: 100%;
+        content: "";
+        width: 100%;
+        opacity: 0.8;
+        z-index: -1;
+        left: 0px;
+        top: 0px;
+    }
+}
+.overview-content {
+    margin: auto;
+    max-width: 750px;
+    text-align: center;
+
+    h3 {
+        font-size: 45px;
+        margin-bottom: 15px;
+        color: var(--white-color);
+    }
+    .default-btn {
+        margin-top: 15px;
+    }
+    .overview-info-list {
+        padding-left: 0;
+        list-style-type: none;
+        margin: {
+            top: 45px;
+            bottom: 0;
+        };
+        li {
+            display: inline-block;
+            margin: {
+                left: 10px;
+                right: 10px;
+            };
+            .color-text {
+                background: var(--main-gradient-color);
+	            -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+                font-weight: bold;
+            }
+            a {
+                color: var(--white-color);
+                position: relative;
+                padding-left: 25px;
+                display: block;
+
+                i {
+                    left: 0;
+                    top: 50%;
+                    position: absolute;
+                    transform: translateY(-50%);
+                }
+                &::after {
+                    background: var(--main-gradient-color);
+                    transition: all ease 0.5s;
+                    border-radius: 50px;
+                    position: absolute;
+                    height: 2.5px;
+                    content: "";
+                    bottom: 0;
+                    width: 0;
+                    left: 0;
+                }
+                &:hover {
+                    color: var(--white-color);
+
+                    &::after {
+                        width: 100%;
+                    }
+                }
+            }
+            &:first-child {
+                margin-left: 0;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    &.text-start {
+        margin: {
+            left: 0;
+            right: 0;
+        };
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .overview-content {
+        h3 {
+            font-size: 25px;
+            margin-bottom: 12px;
+        }
+        .overview-btn {
+            margin-top: 20px;
+        }   
+        .overview-info-list {
+            margin-top: 25px;
+
+            li {
+                display: block;
+                font-size: 15px;
+                margin: {
+                    right: 0;
+                    bottom: 12px;
+                };
+                .color-text {
+                    font-size: 15px;
+                }
+                a {
+                    display: inline-block;
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }     
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .overview-content {
+        h3 {
+            font-size: 40px;
+        }
+        .overview-btn {
+            margin-top: 20px;
+        }   
+        .overview-info-list {
+            margin-top: 25px;
+        }     
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}
