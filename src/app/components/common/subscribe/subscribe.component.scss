@@ -1,0 +1,169 @@
+.newsletter-area {
+    &.bg-f1eff5 {
+        background-color: #f1eff5;
+    }
+    &.bg-0c003d {
+        background-color: var(--white-color);
+        position: relative;
+        z-index: 1;
+
+        &::before {
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            content: '';
+            height: 50%;
+            position: absolute;
+            background-color: #0c003d;
+        }
+    }
+}
+.newsletter-inner-box {
+    border-radius: 10px;
+    position: relative;
+    padding: 50px;
+    z-index: 1;
+    background: {
+        image: url(../../../../assets/images/newsletter-bg.jpg);
+        position: center center;
+        repeat: no-repeat;
+        size: cover;
+    };
+    &::before {
+        top: 0;
+        left: 0;
+        right: 0;
+        content: "";
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.2;
+        position: absolute;
+        border-radius: 10px;
+        background-color: var(--black-color);
+    }
+    .newsletter-content {
+        h3 {
+            font-size: 30px;
+            color: var(--white-color);
+            margin-bottom: 0;
+        }
+        p {
+            color: var(--white-color);
+            margin: {
+                top: 15px;
+                bottom: 0;
+            };
+        }
+    }
+    .newsletter-form {
+        position: relative;
+        padding-left: 15px;
+
+        .input-newsletter {
+            outline: 0;
+            width: 100%;
+            height: 60px;
+            display: block;
+            padding-left: 25px;
+            border-radius: 5px;
+            color: var(--white-color);
+            border: 1px solid #D1CFDB;
+            background: rgba(255, 255, 255, 0.25);
+    
+            &::placeholder {
+                color: var(--white-color);
+                transition: var(--transition);
+            }
+            &:focus {
+                &::placeholder {
+                    color: transparent;
+                }
+            }
+        }
+        button {
+            top: 4px;
+            right: 4px;
+            border: none;
+            height: 52px;
+            padding: 0 30px;
+            line-height: 50px;
+            border-radius: 5px;
+            position: absolute;
+            color: var(--white-color);
+            transition: var(--transition);
+            background-color: var(--main-color);
+            font: {
+                size: var(--font-size);
+                weight: 400;
+            }
+            &:hover {
+                background-color: var(--black-color);
+                color: var(--white-color);
+            }
+        }
+    } 
+    &.newsletter-with-style {
+        position: relative;
+        margin-bottom: -90px;
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .newsletter-inner-box {
+        padding: 60px 20px;
+
+        .newsletter-content {
+            h3 {
+                font-size: 25px;
+            }
+            p {
+                margin-top: 12px;
+            }
+        }
+        .newsletter-form {
+            padding-left: 0;
+            margin-top: 25px;
+
+            .input-newsletter {
+                height: 55px;
+                padding-left: 15px;
+            }
+            button {
+                position: relative;
+                margin-top: 20px;
+                width: 100%;
+                right: 0;
+                top: 0;
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .newsletter-inner-box {
+        .newsletter-form {
+            padding-left: 0;
+            margin-top: 25px;
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

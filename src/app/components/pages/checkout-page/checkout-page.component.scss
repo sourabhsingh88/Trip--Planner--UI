@@ -1,0 +1,340 @@
+.user-actions {
+    padding: 15px 20px;
+    margin-bottom: 40px;
+    background: linear-gradient(90deg, rgba(221, 51, 51, 0.1) 0%, rgba(145, 9, 90, 0.1) 99.7%);
+}
+.billing-details {
+    .title {
+        margin-bottom: 30px;
+        font-size: 24px;
+    }
+    .form-group {
+        margin-bottom: 25px;
+
+        label {
+            display: block;
+            margin-bottom: 12px;
+            color: var(--white-color);
+            font: {
+                weight: 600;
+                size: 16px;
+            };
+            .required {
+                color: red;
+            }
+        }
+        .form-control {
+            height: 55px;
+            border-radius: 0;
+            box-shadow: unset;
+            padding: 15px 20px;
+            line-height: initial;
+            color: var(--white-color);
+            font-size: var(--font-size);
+            transition: var(--transition);
+            border: 1px solid rgba(187, 187, 187, 0.15);
+            background: linear-gradient(90deg, rgba(221, 51, 51, 0.1) 0%, rgba(145, 9, 90, 0.1) 99.7%);
+
+            &::placeholder {
+                color: var(--paragraph-color);
+                transition: var(--transition);
+            }
+            &:focus {
+                border-color: var(--white-color);
+
+                &::placeholder {
+                    color: transparent;
+                }
+            }
+        }
+        .form-select {
+            height: 55px;
+            cursor: pointer;
+            padding: 15px 20px;
+            color: var(--white-color);
+            background-color: #1f033d;
+            box-shadow: unset !important;
+            border: 1px solid rgba(187, 187, 187, 0.15);
+
+            option {
+                color: var(--white-color);
+            }
+        }
+        textarea {
+            &.form-control {
+                min-height: 115px;
+            }
+        }
+        .form-check {
+            .form-check-input {
+                cursor: pointer;
+                margin-top: 0.05em;
+            }
+            .form-check-label {
+                cursor: pointer;
+            }
+        }
+    }
+    .col-lg-12 {
+        &:last-child {
+            .form-group {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+.order-details {
+    .title {
+        margin-bottom: 30px;
+        font-size: 24px;
+    }
+    .order-table {
+        table {
+            margin-bottom: 0;
+    
+            thead {
+                tr {
+                    th {
+                        white-space: nowrap;
+                        border-bottom-width: 0;
+                        vertical-align: middle;
+                        padding: 14px 20px 10px;
+                        color: var(--white-color);
+                        font-size: var(--font-size);
+                        border: 1px solid rgba(187, 187, 187, 0.15);
+                    }
+                }
+            }
+            tbody {
+                tr {
+                    td {
+                        border: 1px solid rgba(187, 187, 187, 0.15);
+                        color: var(--white-color);
+                        vertical-align: middle;
+                        white-space: nowrap;
+                        font-size: 16px;
+                        padding: {
+                            top: 15px;
+                            left: 20px;
+                            right: 20px;
+                            bottom: 12px;
+                        };
+                        &.product-name {
+                            a {
+                                display: inline-block;
+                                color: var(--white-color);
+
+                                &:hover {
+                                    color: var(--main-color);
+                                }
+                            }
+                        }
+                        &.order-subtotal, &.order-shipping , &.total-price {
+                            span {
+                                color: var(--white-color);
+                                text-transform: uppercase;
+                                font: {
+                                    weight: 500;
+                                    size: var(--font-size);
+                                };
+                            }
+                        }
+                        &.shipping-price, &.order-subtotal-price, &.product-subtotal {
+                            color: var(--white-color);
+                            font: {
+                                weight: 500;
+                                size: var(--font-size);
+                            };
+                        }
+                    }
+                }
+                &:not(:first-child) {
+                    border-top: unset;
+                }
+            }
+        }
+    }
+    .payment-box {
+        background: linear-gradient(90deg, rgba(221, 51, 51, 0.1) 0%, rgba(145, 9, 90, 0.1) 99.7%);
+        border: 1px solid rgba(187, 187, 187, 0.15);
+        border-radius: 5px;
+        margin-top: 30px;
+        padding: 30px;
+        
+        .payment-method {
+            p {
+                font-size: 15px;
+
+                [type="radio"] {
+                    &:checked, &:not(:checked) {
+                        display: none;
+                    }
+                }
+                [type="radio"] {
+                    &:checked, &:not(:checked) {
+                        + label {
+                            display: block;
+                            cursor: pointer;
+                            position: relative;
+                            margin-bottom: 8px;
+                            padding-left: 25.8px;
+                            color: var(--white-color);
+                            font-size: var(--font-size);
+
+                            &::before {
+                                left: 0;
+                                top: 3px;
+                                content: '';
+                                width: 18px;
+                                height: 18px;
+                                border-radius: 50%;
+                                position: absolute;
+                                border: 1px solid #dddddd;
+                                background: var(--white-color);
+                            }
+                            &::after {
+                                top: 6px;
+                                left: 3px;
+                                content: '';
+                                width: 12px;
+                                height: 12px;
+                                border-radius: 50%;
+                                position: absolute;
+                                transition: var(--transition);
+                                background: var(--main-color);
+                            }
+                        }
+                    }
+                }
+                [type="radio"] {
+                    &:not(:checked) {
+                        + label {
+                            &::after {
+                                opacity: 0;
+                                visibility: hidden;
+                                transform: scale(0);
+                            }
+                        }
+                    }
+                }
+                [type="radio"] {
+                    &:checked {
+                        + label {
+                            &::after {
+                                opacity: 1;
+                                visibility: visible;
+                                transform: scale(1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .default-btn {
+            padding: 15px 30px;
+            margin-top: 20px;
+            display: block;
+            width: 100%;
+            border: 0;
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .user-actions {
+        padding: 10px 15px;
+    }
+    .billing-details {
+        .title {
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+        .form-group {
+            label {
+                font-size: 14px;
+            }
+            .form-control {
+                height: 50px;
+                font-size: 15px;
+                padding: 12px 15px;
+            }
+            .form-select {
+                height: 50px;
+                font-size: 15px;
+                padding: 12px 15px;
+            }
+        }
+    }
+    .order-details {
+        margin-top: 25px;
+
+        .title {
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+        .order-table {
+            table {
+                thead {
+                    tr {
+                        th {
+                            font-size: 15px;
+                            padding: {
+                                left: 15px;
+                                right: 15px;
+                            };
+                        }
+                    }
+                }
+                tbody {
+                    tr {
+                        td {
+                            font-size: 15px;
+                            padding: {
+                                left: 15px;
+                                right: 15px;
+                            };
+                            &.order-subtotal, &.order-shipping , &.total-price {
+                                span {
+                                    font-size: 15px;
+                                }
+                            }
+                            &.shipping-price, &.order-subtotal-price, &.product-subtotal {
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                    &:not(:first-child) {
+                        border-top: unset;
+                    }
+                }
+            }
+        }
+        .payment-box {
+            padding: 20px;
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .order-details {
+        margin-top: 25px;
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

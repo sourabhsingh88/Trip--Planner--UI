@@ -1,0 +1,97 @@
+@font-face {
+    font-family: "flaticon";
+    src: url("../../assets/fonts/flaticon.ttf?540cdf2ad200210d69e31dd2dff94e2d") format("truetype"),
+url("../../assets/fonts/flaticon.woff?540cdf2ad200210d69e31dd2dff94e2d") format("woff"),
+url("../../assets/fonts/flaticon.woff2?540cdf2ad200210d69e31dd2dff94e2d") format("woff2"),
+url("../../assets/fonts/flaticon.eot?540cdf2ad200210d69e31dd2dff94e2d#iefix") format("embedded-opentype"),
+url("../../assets/fonts/flaticon.svg?540cdf2ad200210d69e31dd2dff94e2d#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.flaticon-facebook:before {
+    content: "\f101";
+}
+.flaticon-microphone:before {
+    content: "\f102";
+}
+.flaticon-play:before {
+    content: "\f103";
+}
+.flaticon-right-arrows:before {
+    content: "\f104";
+}
+.flaticon-download:before {
+    content: "\f105";
+}
+.flaticon-play-button:before {
+    content: "\f106";
+}
+.flaticon-donation:before {
+    content: "\f107";
+}
+.flaticon-twitter:before {
+    content: "\f108";
+}
+.flaticon-soundcloud:before {
+    content: "\f109";
+}
+.flaticon-patreon:before {
+    content: "\f10a";
+}
+.flaticon-visibility:before {
+    content: "\f10b";
+}
+.flaticon-sharing:before {
+    content: "\f10c";
+}
+.flaticon-spotify:before {
+    content: "\f10d";
+}
+.flaticon-blocks-with-angled-cuts:before {
+    content: "\f10e";
+}
+.flaticon-writing:before {
+    content: "\f10f";
+}
+.flaticon-headphones:before {
+    content: "\f110";
+}
+.flaticon-instagram:before {
+    content: "\f111";
+}
+.flaticon-shopping-cart:before {
+    content: "\f112";
+}
+.flaticon-loupe:before {
+    content: "\f113";
+}
+.flaticon-volume:before {
+    content: "\f114";
+}
+.flaticon-forward:before {
+    content: "\f115";
+}
+.flaticon-down-chevron:before {
+    content: "\f116";
+}
+.flaticon-left-arrow:before {
+    content: "\f117";
+}
+.flaticon-apple-logo:before {
+    content: "\f118";
+}
+.flaticon-speaker-interface-audio-symbol:before {
+    content: "\f119";
+}
+.flaticon-shopping-cart-empty-side-view:before {
+    content: "\f11a";
+}

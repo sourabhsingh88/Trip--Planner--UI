@@ -1,0 +1,112 @@
+.faq-content {
+    max-width: 1100px;
+    
+    .faq-item {
+        margin-bottom: 25px;
+
+        .faq-header {
+            border: 1px solid #322C60;
+            padding: 20px 60px 20px 30px;
+            cursor: pointer;
+            font-size: 22px;
+            
+            i {
+                top: 50%;
+                right: 30px;
+                line-height: 1;
+                font-size: 25px;
+                position: absolute;
+                color: var(--bodyColor);
+                transform: translateY(-50%);
+            }
+        }
+        .faq-content {
+            padding: 20px 30px;
+            border: 1px solid #322C60;
+            border-top: none;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .faq-content {
+        max-width: 100%;
+        
+        .faq-item {
+            margin-bottom: 20px;
+
+            .faq-header {
+                padding: 14px 38px 14px 20px;
+                font-size: 16px;
+                
+                i {
+                    right: 15px;
+                    font-size: 20px;
+                }
+            }
+            .faq-content {
+                padding: 15px 20px;
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .faq-content {
+        max-width: 100%;
+        
+        .faq-item {
+            .faq-header {
+                padding: 18px 55px 18px 25px;
+                font-size: 20px;
+                
+                i {
+                    right: 25px;
+                    font-size: 23px;
+                }
+            }
+            .faq-content {
+                padding-top: 18px 25px;
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .faq-content {
+        max-width: 850px;
+        
+        .faq-item {
+            .faq-header {
+                font-size: 20px;
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .faq-content {
+        max-width: 950px;
+    }
+
+}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

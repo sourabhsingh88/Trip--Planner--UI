@@ -1,0 +1,37 @@
+<!-- Page Banner -->
+<div class="page-banner-area bg-2 ptb-100">
+    <div class="container">
+        <div class="page-banner-content">
+            <h2>Frequently Asked Question</h2>
+            <ul>
+                <li>
+                    <a routerLink="/">
+                        Home
+                    </a>
+                </li>
+                <li>FAQ</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq-area pt-100 pb-75">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-12">
+                <div class="faq-content">
+                    <div class="faq-item" *ngFor="let item of accordionItems; let i = index;">
+                        <div class="faq-header fw-bold position-relative" (click)="toggleAccordionItem(item)">
+                            {{item.title}}
+                            <i [ngClass]="{'ri-arrow-down-s-line': !item.open, 'ri-arrow-up-s-line': item.open}"></i>
+                        </div>
+                        <div class="faq-content" [hidden]="!item.open">
+                            <p>{{item.content}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
