@@ -1,0 +1,99 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+
+<div class="navbar-area"
+    [ngClass]="{'bg-color-transparent' : router.url === '/index-2', 'bg-with-color' : router.url === '/index-3'}"
+    [ngClass]="{'sticky': isSticky}">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light" [class.active]="classApplied">
+            <a class="navbar-brand" routerLink="/">
+                <img src="assets/images/logo.png" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" (click)="toggleClass()">
+                <span class="burger-menu">
+                    <span class="top-bar"></span>
+                    <span class="middle-bar"></span>
+                    <span class="bottom-bar"></span>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a routerLink="/index-2" class="nav-link" routerLinkActive="active"
+                            [routerLinkActiveOptions]="{exact: true}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/about-us" class="nav-link" routerLinkActive="active"
+                            [routerLinkActiveOptions]="{exact: true}">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/gallery" class="nav-link" routerLinkActive="active"
+                            [routerLinkActiveOptions]="{exact: true}">Gallery</a>
+                    </li>
+
+                    <li class="nav-item"><a routerLink="/contact" class="nav-link" routerLinkActive="active"
+                        [routerLinkActiveOptions]="{exact: true}" (click)="toggleClass()">Bookings</a></li>
+
+                        <li class="nav-item"><a routerLink="/contact" class="nav-link" routerLinkActive="active"
+                            [routerLinkActiveOptions]="{exact: true}" (click)="toggleClass()">Apply For TripPlanner</a></li>
+                
+
+                    <li class="notification">
+                        <a routerLink="/contact" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}" (click)="toggleClass()">
+                            <div class="position-relative me-3" (click)="onNotificationClick()">
+                                <i class="bi bi-bell"></i>
+                                <span *ngIf="notificationCount > 0" class="badge bg-danger rounded-pill position-absolute top-0 start-100 translate-middle">
+                                {{ notificationCount }}</span>
+                            </div>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item dropdown profile-photo">
+                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="assets/images/atul.png" alt="Profile" class="rounded-circle profile-img">
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" routerLink="/profile">My Profile</a></li>
+                        <li><a class="dropdown-item" routerLink="/settings">Contect</a></li>
+                        <li><a class="dropdown-item" routerLink="/select-role">Switch Role</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" routerLink="/logout"(click)="logout()">Logout</a></li>
+                    </ul>
+                    </li>
+
+                </ul>
+                <ul class="navbar-nav for-responsive">
+                    <li class="nav-item">
+                        <a routerLink="/index-2" class="nav-link" routerLinkActive="active"
+                            [routerLinkActiveOptions]="{exact: true}" (click)="toggleClass()">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/about-us" class="nav-link" routerLinkActive="active"
+                            [routerLinkActiveOptions]="{exact: true}" (click)="toggleClass()">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/gallery" class="nav-link" routerLinkActive="active"
+                            [routerLinkActiveOptions]="{exact: true}" (click)="toggleClass()">Gallery</a>
+                    </li>
+
+                    <li class="nav-item"><a routerLink="/contact" class="nav-link" routerLinkActive="active"
+                        [routerLinkActiveOptions]="{exact: true}" (click)="toggleClass()">Bookings</a></li>
+
+                        <li class="nav-item"><a routerLink="/contact" class="nav-link" routerLinkActive="active"
+                            [routerLinkActiveOptions]="{exact: true}" (click)="toggleClass()">Apply For TripPlanner</a></li>
+                    
+                    <li class="nav-item"><a routerLink="/contact" class="nav-link" routerLinkActive="active"
+                            [routerLinkActiveOptions]="{exact: true}" (click)="toggleClass()">Contact</a></li>
+                </ul>
+                <div class="others-options d-flex align-items-center">
+                    
+
+                    
+                    
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+

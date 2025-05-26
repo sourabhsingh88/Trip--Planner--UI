@@ -49,12 +49,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './service/user-service';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
+import { NavbarUserComponent } from './components/common/navbar-user/navbar-user.component';
+import { HomeDemoTwoUserComponent } from './components/pages/home-demo-two-user/home-demo-two-user.component';
+import { HometwoBannerUserComponent } from './components/pages/home-demo-two-user/hometwo-banner-user/hometwo-banner-user.component';
+import { NavbarPlannerComponent } from './components/common/navbar-planner/navbar-planner.component';
+import { SelectRoleComponent } from './components/pages/select-role/select-role.component';
+import { ProfileComponent } from './components/pages/profile/profile.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		HomeDemoTwoComponent,
 		HometwoBannerComponent,
+		HomeDemoTwoUserComponent,
+		HometwoBannerUserComponent,
 		NavbarComponent,
 		BlogComponent,
 		FeaturedShowsComponent,
@@ -90,6 +98,10 @@ import { MatIconModule } from '@angular/material/icon';
 		SingleEpisodePageComponent,
 		VideoEpisodesComponent,
 		SingleVideoEpisodePageComponent,
+		NavbarUserComponent,
+		NavbarPlannerComponent,
+		SelectRoleComponent,
+		ProfileComponent
 	],
 	imports: [
         BrowserModule,

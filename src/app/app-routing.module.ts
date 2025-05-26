@@ -22,10 +22,14 @@ import { SingleEpisodePageComponent } from './components/pages/single-episode-pa
 import { SingleSeasonPageComponent } from './components/pages/single-season-page/single-season-page.component';
 import { SingleVideoEpisodePageComponent } from './components/pages/single-video-episode-page/single-video-episode-page.component';
 import { TermsOfServicePageComponent } from './components/pages/terms-of-service-page/terms-of-service-page.component';
+import { HomeDemoTwoUserComponent } from './components/pages/home-demo-two-user/home-demo-two-user.component';
+import { SelectRoleComponent } from './components/pages/select-role/select-role.component';
+import { ProfileComponent } from './components/pages/profile/profile.component';
 
 const routes: Routes = [
     {path: '', component: HomeDemoTwoComponent},
     {path: 'index-2', component: HomeDemoTwoComponent},
+    {path: 'user', component: HomeDemoTwoUserComponent},
     {path: 'about-us', component: AboutPageComponent},
     {path: 'meet-our-hosts', component: OurHostsPageComponent},
     {path: 'gallery', component: GalleryPageComponent},
@@ -46,6 +50,9 @@ const routes: Routes = [
     {path: 'blog', component: BlogPageComponent},
     {path: 'blog-details', component: BlogDetailsPageComponent},
     {path: 'contact', component: ContactPageComponent},
+    {path: 'select-role', component: SelectRoleComponent},
+    {path: 'profile', component: ProfileComponent},
+    
     // Here add new pages component
 
     {path: '**', component: NotFoundComponent} // This line will remain down from the whole pages component list
