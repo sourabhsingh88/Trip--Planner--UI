@@ -1,5 +1,14 @@
+<!-- For debugging
+<p>isLoggedIn: {{ isLoggedIn }}</p>
+<p>userRole: {{ userRole }}</p> -->
+
+<!-- Navbars -->
+<app-navbar *ngIf="!isLoggedIn"></app-navbar>
+<app-navbar-user *ngIf="isLoggedIn && userRole === 'customer'"></app-navbar-user>
+<app-navbar-planner *ngIf="isLoggedIn && userRole === 'tripplanner'"></app-navbar-planner>
+
+
 
 <router-outlet></router-outlet>
-<!-- <app-subscribe></app-subscribe> -->
 <app-footer></app-footer>
 <ngx-scrolltop></ngx-scrolltop>

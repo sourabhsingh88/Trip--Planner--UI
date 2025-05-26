@@ -1,0 +1,71 @@
+<!-- <div class="main-banner-wrap-area">
+    <div class="container-fluid">
+        <div class="main-banner-wrap-content">
+            <h1>New Episodes Are Available Now</h1>
+            <div class="banner-audio-player">
+                <div class="row align-items-center">
+                    <div class="col-lg-2 col-md-12">
+                        <div class="image">
+                            <img src="assets/images/main-banner/audio.jpg" alt="image">
+                        </div>
+                    </div>
+                    <div class="col-lg-10 col-md-12">
+                        <audio controls>
+                            <source src="assets/audio/song.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+            <div class="banner-wrap-btn">
+                <a routerLink="/season-list">Browse All Latest Episodes <i class="flaticon-right-arrows"></i></a>
+            </div>
+        </div>
+    </div>
+    <ul class="banner-wrap-social">
+        <li>
+            <a href="https://soundcloud.com/" target="_blank">
+                <i class="flaticon-soundcloud"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.spotify.com/" target="_blank">
+                <i class="flaticon-spotify"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://twitter.com/" target="_blank">
+                <i class="flaticon-twitter"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://facebook.com/" target="_blank">
+                <i class="flaticon-facebook"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.instagram.com/" target="_blank">
+                <i class="flaticon-instagram"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.apple.com/apple-music/" target="_blank">
+                <i class="flaticon-apple-logo"></i>
+            </a>
+        </li>
+    </ul>
+</div> -->
+
+
+<div class="slider-area">
+    <owl-carousel-o [options]="customOptions">
+      <ng-container *ngFor="let slide of slides">
+        <ng-template carouselSlide>
+            
+          <div class="slider-item" [style.backgroundImage]="'url(' + slide.image + ')'">
+           
+          </div>
+        </ng-template>
+      </ng-container>
+    </owl-carousel-o>
+  </div>

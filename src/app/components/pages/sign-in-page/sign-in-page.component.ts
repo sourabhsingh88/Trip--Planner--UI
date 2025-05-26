@@ -20,22 +20,39 @@ export class SignInPageComponent {
   })
    }
 
-   public login(){
-    console.log("Login User");
-    console.log(this.loginFormGroup.valid);
-    console.log(this.loginFormGroup.value);
-    this.userService.login(this.loginFormGroup.value).subscribe(
-        (successResponse) =>{
-            console.log(successResponse);
-            alert(successResponse.message);
-            this.router.navigate(['/index-2']);
-        },
-        (errorResponse) =>{
-            console.log(errorResponse);
-            alert(errorResponse.error.message);
-            // window.location.reload(); // Page refresh hoga
+//    public login(){
+//     console.log("Login User");
+//     console.log(this.loginFormGroup.valid);
+//     console.log(this.loginFormGroup.value);
+//     this.userService.login(this.loginFormGroup.value).subscribe(
+//         (successResponse) =>{
+//             console.log(successResponse);
+//             alert(successResponse.message);
+//             this.router.navigate(['/index-2']);
+//         },
+//         (errorResponse) =>{
+//             console.log(errorResponse);
+//             alert(errorResponse.error.message);
+//             // window.location.reload(); // Page refresh hoga
+//         }
+//     );
+// }
+
+        public login() {
+          this.userService.login(this.loginFormGroup.value).subscribe(
+            (res) => {
+              this.userService.saveUserData(res.data);
+              const roles = res.data.roles;
+              if (roles.length === 1) {
+                this.router.navigate(['/index-2']);
+              } else {
+                this.router.navigate(['/select-role']);
+              }
+            },
+            (error) => {
+              alert(error.error.message);
+            }
+          );
         }
-    );
-}
 
 }

@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-hometwo-banner-user',
-    templateUrl: './hometwo-banner.component.html',
-    styleUrls: ['./hometwo-banner.component.scss']
+    selector: 'app-hometwo-banner',
+    templateUrl: './hometwo-banner-user.component.html',
+    styleUrls: ['./hometwo-banner-user.component.scss']
 })
-export class HometwoBannerComponent implements OnInit {
+export class HometwoBannerUserComponent implements OnInit {
 
     constructor() { }
-
+  
     ngOnInit(): void {}
 
 

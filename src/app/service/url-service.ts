@@ -5,8 +5,11 @@ import { Injectable } from "@angular/core";
 })
 export class URLService{
     public readonly baseURL: string = "http://localhost:1002/booking-service-api-local/";
+
     public readonly userSaveAPI: string = this.baseURL + "user/signup";
     public readonly userLoginAPI: string = this.baseURL + "user/login";
+    public readonly userFindByIdAPI: string = this.baseURL + "user/byId?id=";
+    
 
 
     public readonly userUpdateAPI: string = this.baseURL + "user?task=userUpdate";

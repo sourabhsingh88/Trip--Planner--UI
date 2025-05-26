@@ -7,8 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShopPageComponent implements OnInit {
 
-  constructor() { }
+  isOpen = false;
+  selectedOption: string | null = null;
+  options = ['Option 1', 'Option 2', 'Option 3'];
 
+  toggleDropdown() {
+    this.isOpen = !this.isOpen;
+  }
+
+  selectOption(option: string) {
+    this.selectedOption = option;
+    this.isOpen = false;
+  }
+  constructor() { }
   ngOnInit(): void {
   }
 
