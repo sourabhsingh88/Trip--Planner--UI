@@ -22,10 +22,16 @@ import { SingleEpisodePageComponent } from './components/pages/single-episode-pa
 import { SingleSeasonPageComponent } from './components/pages/single-season-page/single-season-page.component';
 import { SingleVideoEpisodePageComponent } from './components/pages/single-video-episode-page/single-video-episode-page.component';
 import { TermsOfServicePageComponent } from './components/pages/terms-of-service-page/terms-of-service-page.component';
+import { ContinuePageComponent } from './components/pages/Continued-page/continued-page.component';
+import { discontinuePageComponent } from './components/pages/Discontinues-page/discontinued-page.component';
+import { HomeTripPlannerComponent } from './components/pages/Home-TripPlanner/homeTripplanner.component';
+import { NotificationPlannerComponent } from './components/pages/notification-tripplanner/notification-tripplanner.component';
 
 const routes: Routes = [
-    {path: '', component: HomeDemoTwoComponent},
-    {path: 'index-2', component: HomeDemoTwoComponent},
+    // {path: '', component: HomeDemoTwoComponent},
+    {path: 'home', component: HomeTripPlannerComponent},
+    {path: 'continue', component: ContinuePageComponent},
+    {path: 'discontinue', component: discontinuePageComponent},
     {path: 'about-us', component: AboutPageComponent},
     {path: 'meet-our-hosts', component: OurHostsPageComponent},
     {path: 'gallery', component: GalleryPageComponent},
@@ -46,6 +52,7 @@ const routes: Routes = [
     {path: 'blog', component: BlogPageComponent},
     {path: 'blog-details', component: BlogDetailsPageComponent},
     {path: 'contact', component: ContactPageComponent},
+    {path: 'notification', component: NotificationPlannerComponent},
     // Here add new pages component
 
     {path: '**', component: NotFoundComponent} // This line will remain down from the whole pages component list

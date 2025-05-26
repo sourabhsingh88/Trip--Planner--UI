@@ -49,6 +49,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './service/user-service';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
+import { NavbarTripPlannerComponent } from './components/common/navbar-tripplanner/navbar-tripplanner.component';
+import { discontinuePageComponent } from './components/pages/Discontinues-page/discontinued-page.component';
+import { ContinuePageComponent } from './components/pages/Continued-page/continued-page.component';
+import { HomeTripPlannerComponent } from './components/pages/Home-TripPlanner/homeTripplanner.component';
+import { HomeTripPlannerBannerComponent } from './components/pages/Home-TripPlanner/homeTripplanner-banner/homeTripplanner-banner.component';
+import { NotificationPlannerComponent } from './components/pages/notification-tripplanner/notification-tripplanner.component';
 
 @NgModule({
 	declarations: [
@@ -90,6 +96,12 @@ import { MatIconModule } from '@angular/material/icon';
 		SingleEpisodePageComponent,
 		VideoEpisodesComponent,
 		SingleVideoEpisodePageComponent,
+		NavbarTripPlannerComponent,
+		discontinuePageComponent,
+		ContinuePageComponent,
+		HomeTripPlannerComponent,
+		HomeTripPlannerBannerComponent,
+		NotificationPlannerComponent,
 	],
 	imports: [
         BrowserModule,

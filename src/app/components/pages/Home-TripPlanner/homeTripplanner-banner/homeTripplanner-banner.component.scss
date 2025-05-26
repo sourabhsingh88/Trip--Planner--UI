@@ -1,0 +1,317 @@
+// .main-banner-wrap-area {
+//     position: relative;
+//     overflow: hidden;
+//     z-index: 1;
+//     padding: {
+//         top: 250px;
+//         bottom: 150px;
+//     };
+//     background: {
+//         image: url(../../../../../assets/images/main-banner/banner-bg.jpg);
+//         position: center center;
+//         repeat: no-repeat;
+//         size: cover;
+//     };
+//     &::before {
+//         top: 0;
+//         left: 0;
+//         right: 0;
+//         content: "";
+//         width: 100%;
+//         z-index: -1;
+//         height: 100%;
+//         position: absolute;
+//         background: linear-gradient(90deg, rgba(12, 0, 61, 0.8) 28.13%, rgba(42, 36, 88, 0.15) 100%);
+//     }
+//     .container-fluid {
+//         padding: {
+//             left: 30px;
+//             right: 30px;
+//         };
+//     }
+// }
+// .main-banner-wrap-content {
+//     max-width: 990px;
+
+//     h1 {
+//         font-size: 100px;
+//         margin-bottom: 15px;
+//         color: var(--white-color);
+//     }
+//     .banner-wrap-btn {
+//         margin-top: 30px;
+    
+//         a {
+//             color: var(--white-color);
+//             padding-right: 25px;
+//             position: relative;
+//             font-weight: 600;
+    
+//             i {
+//                 position: absolute;
+//                 font-size: 20px;
+//                 right: -2.5px;
+//                 top: -1px;
+//             }
+//             &::after {
+//                 left: 0;
+//                 width: 0;
+//                 content: "";
+//                 height: 2px;
+//                 bottom: -2px;
+//                 position: absolute;
+//                 border-radius: 50px;
+//                 transition: all ease 0.5s;
+//                 background: var(--main-gradient-color);
+//             }
+//             &:hover {
+//                 color: var(--optional-color);
+    
+//                 &::after {
+//                     width: 100%;
+//                 }
+//             }
+//         }
+//     }
+//     .banner-audio-player {
+//         background: linear-gradient(89.98deg, #00F9EF -20.76%, #0052ffc4 99.98%);
+//         border-radius: 10px;
+//         padding: 30px;
+
+//         .image {
+//             border-radius: 10px;
+
+//             img {
+//                 border-radius: 10px;
+//             }
+//         }
+//     }
+// }
+// .banner-wrap-social {
+//     top: 50%;
+//     right: 30px;
+//     padding-left: 0;
+//     margin-bottom: 0;
+//     position: absolute;
+//     transform: translateY(-50%);
+
+//     li {
+//         list-style-type: none;
+//         margin-bottom: 15px;
+
+//         a {
+//             i {
+//                 width: 50px;
+//                 height: 50px;
+//                 font-size: 22px;
+//                 line-height: 58px;
+//                 text-align: center;
+//                 border-radius: 50px;
+//                 display: inline-block;
+//                 color: var(--white-color);
+//                 background-color: #221D48;
+//                 transition: var(--transition);
+
+//                 &:hover {
+//                     background-color: var(--main-color);
+//                 }
+//             }
+//         }
+//         &:last-child {
+//             margin-bottom: 0;
+//         }
+//     }
+// }
+
+// /* Max width 767px */
+// @media only screen and (max-width: 767px) {
+
+//     .main-banner-wrap-area {
+//         padding: {
+//             top: 130px;
+//             bottom: 60px;
+//         };
+//         .container-fluid {
+//             padding: {
+//                 right: var(--bs-gutter-x,.75rem);
+//                 left: var(--bs-gutter-x,.75rem);
+//             };
+//         }
+//     }
+//     .main-banner-wrap-content {
+//         max-width: 100%;
+        
+//         h1 {
+//             font-size: 30px;
+//             line-height: 1.5;
+//             margin-bottom: 20px;
+//         }
+//         .banner-audio-player {
+//             padding: 20px 20px 0;
+
+//             .image {
+//                 margin-bottom: 20px;
+//             }
+//         }
+//         .banner-wrap-btn {
+//             font-size: 16px;
+//             top: 0;
+//         }
+//     }
+//     .banner-wrap-social {
+//         display: none;
+//     }
+
+// }
+
+// /* Min width 576px to Max width 767px */
+// @media only screen and (min-width: 576px) and (max-width: 767px) {
+
+//     .main-banner-wrap-area {
+//         .container-fluid {
+//             max-width: 540px;
+//         }
+//     }
+
+// }
+
+// /* Min width 768px to Max width 991px */
+// @media only screen and (min-width: 768px) and (max-width: 991px) {
+
+//     .main-banner-wrap-area {
+//         padding: {
+//             top: 130px;
+//             bottom: 80px;
+//         };
+//         .container-fluid {
+//             max-width: 720px;
+//             padding: {
+//                 right: var(--bs-gutter-x,.75rem);
+//                 left: var(--bs-gutter-x,.75rem);
+//             };
+//         }
+//     }
+//     .main-banner-wrap-content {
+//         h1 {
+//             font-size: 60px;
+//             line-height: 1.5;
+//         }
+//     }
+//     .banner-wrap-social {
+//         display: none;
+//     }
+
+// }
+
+// /* Min width 992px to Max width 1199px */
+// @media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+//     .main-banner-wrap-area {
+//         .container-fluid {
+//             max-width: 960px;
+//             padding: {
+//                 right: var(--bs-gutter-x,.75rem);
+//                 left: var(--bs-gutter-x,.75rem);
+//             };
+//         }
+//     }
+//     .main-banner-wrap-content {
+//         max-width: 845px;
+
+//         h1 {
+//             font-size: 85px;
+//         }
+//     }
+
+// }
+
+// /* Min width 1200px to Max width 1399px */
+// @media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+// /* Min width 1600px */
+// @media only screen and (min-width: 1600px) {
+
+//     .main-banner-wrap-area {
+//         padding-bottom: 180px;
+        
+//         .container-fluid {
+//             max-width: 1900px;
+//             padding: {
+//                 left: 100px;
+//                 right: 100px;
+//             };
+//         }
+//     }
+//     .banner-wrap-social {
+//         right: 100px;
+//     }
+    
+// }
+
+
+.slider-area {
+    position: relative;
+    
+    width: 100%;
+    height: 500px; /* Make sure baner covers full screen height */
+    overflow: hidden;
+  }
+  
+  .slider-item {
+    width: 100%;
+    height: 500px; /* Ensure the banner takes full height */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .slider-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    width: 100%;
+  }
+  
+  /* Adjust arrow navigation positioning */
+  .owl-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+  }
+  
+  .owl-prev, .owl-next {
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    padding: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .owl-prev {
+    position: absolute;
+    left: 20px;
+  }
+  
+  .owl-next {
+    position: absolute;
+    right: 20px;
+  }
+  
+  .owl-prev:hover, .owl-next:hover {
+    background: rgba(255, 255, 255, 0.8);
+  }

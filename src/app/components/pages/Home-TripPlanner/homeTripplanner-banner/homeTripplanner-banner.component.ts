@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-hometwo-banner',
-    templateUrl: './hometwo-banner.component.html',
-    styleUrls: ['./hometwo-banner.component.scss']
+    selector: 'app-homeTripplanner-banner',
+    templateUrl: './homeTripplanner-banner.component.html',
+    styleUrls: ['./homeTripplanner-banner.component.scss']
 })
-export class HometwoBannerComponent implements OnInit {
+export class HomeTripPlannerBannerComponent implements OnInit {
 
     constructor() { }
 
@@ -14,17 +14,21 @@ export class HometwoBannerComponent implements OnInit {
 
     
     
-        slides = [
+        slides = [ 
             {
-              image: "../../../../../assets/images/main-banner//bannnerx.jpeg",
+              image: '../../../../../assets/images/banner-episodes/download.jpeg',
           
             },
             {
-              image: '../../../../../assets/images/banner-episodes/banner2.jpg',
+              image: '../../../../../assets/images/banner-episodes/SeaBank.jpeg',
              
             },
             {
-              image: '../../../../../assets/images/banner-episodes/banner3.jpg',
+              image: '../../../../../assets/images/banner-episodes/SeaBank.jpeg',
+             
+            },
+            {
+              image: '../../../../../assets/images/banner-episodes/download.jpeg',
              
             },
             
