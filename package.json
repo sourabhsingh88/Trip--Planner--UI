@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "^16.2.12",
     "@angular/router": "^16.2.12",
     "bootstrap": "^5.3.3",
+    "goca-ng": "file:",
     "lightgallery": "^2.7.0",
     "ngx-owl-carousel-o": "^16.0.0",
     "ngx-pagination": "^6.0.3",

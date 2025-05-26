@@ -4,8 +4,10 @@
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light" [class.active]="classApplied">
             <a class="navbar-brand" routerLink="/">
-                <img src="assets/images/logo.png" alt="logo">
+                <img src="assets/images/logo.png" alt="logo" style="height: 200px; width: 200px;">
             </a>
+
+
             <button class="navbar-toggler" type="button" (click)="toggleClass()">
                 <span class="burger-menu">
                     <span class="top-bar"></span>
@@ -47,7 +49,7 @@
                             [routerLinkActiveOptions]="{exact: true}" (click)="toggleClass()">Contact</a></li>
                 </ul>
                 <div class="others-options d-flex align-items-center">
-                    
+
 
                     <div class="option-item">
                         <a routerLink="/sign-in" class="default-btn" (click)="toggleClass()">
