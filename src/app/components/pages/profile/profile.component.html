@@ -1,8 +1,11 @@
 <div class="profile-container">
   <div class="profile-card">
     <div class="profile-image">
-      <img [src]="user.profileImg" alt="Profile picture" />
-    </div>
+  <img [src]="'http://localhost:1002/booking-service-api-local/users/' + userResponseList.profileImage" alt="Profile Image" />
+
+
+</div>
+
     <div class="profile-info">
       <h1>{{ userResponseList.name }}</h1>
       <p class="title">{{ userRole }}</p>
@@ -13,6 +16,9 @@
         <p><strong>Location:</strong> {{ user.location }}</p>
         <p><strong>DOB:</strong> {{ userResponseList.dob }}</p>
         <p><strong>Gender:</strong> {{ userResponseList.gender }}</p>
+       
+    
+
       </div>
 
       <div class="about">
