@@ -1,5 +1,93 @@
 .products-details-image {
     padding-right: 15px;
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.products-details-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Slider navigation buttons */
+.products-details-image .prev-btn,
+.products-details-image .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(50, 44, 96, 0.7); /* dark purple, matching your input-counter background */
+    border: none;
+    color: var(--white-color);
+    font-size: 24px;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    user-select: none;
+    z-index: 10;
+}
+
+.products-details-image .prev-btn:hover,
+.products-details-image .next-btn:hover {
+    background-color: var(--main-color);
+}
+
+.products-details-image .prev-btn {
+    left: 10px;
+}
+
+.products-details-image .next-btn {
+    right: 10px;
+}
+
+/* Slider dots container */
+.products-details-image .dots {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.products-details-image .dots span {
+    height: 14px;
+    width: 14px;
+    margin: 0 6px;
+    display: inline-block;
+    background-color: #322C60; /* same as input-counter background */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.products-details-image .dots span.active {
+    background-color: var(--main-color); /* Your primary color */
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 767px) {
+    .products-details-image {
+        padding-right: 0;
+    }
+    .products-details-image .prev-btn,
+    .products-details-image .next-btn {
+        font-size: 20px;
+        padding: 8px 12px;
+    }
+    .products-details-image .dots {
+        margin-top: 15px;
+    }
+    .products-details-image .dots span {
+        height: 12px;
+        width: 12px;
+        margin: 0 4px;
+    }
+}
+
+
+.products-details-image {
+    padding-right: 15px;
 }
 .products-details-desc {
     padding-left: 15px;

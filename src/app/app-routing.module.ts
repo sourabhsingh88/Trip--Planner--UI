@@ -25,6 +25,7 @@ import { TermsOfServicePageComponent } from './components/pages/terms-of-service
 import { HomeDemoTwoUserComponent } from './components/pages/home-demo-two-user/home-demo-two-user.component';
 import { SelectRoleComponent } from './components/pages/select-role/select-role.component';
 import { ProfileComponent } from './components/pages/profile/profile.component';
+import { BookingPageComponent } from './components/pages/booking-page/booking-page.component';
 
 const routes: Routes = [
     {path: '', component: HomeDemoTwoComponent},
@@ -52,6 +53,7 @@ const routes: Routes = [
     {path: 'contact', component: ContactPageComponent},
     {path: 'select-role', component: SelectRoleComponent},
     {path: 'profile', component: ProfileComponent},
+    {path:'booking' ,component: BookingPageComponent},
     
     // Here add new pages component
 

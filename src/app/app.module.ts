@@ -55,7 +55,11 @@ import { HometwoBannerUserComponent } from './components/pages/home-demo-two-use
 import { NavbarPlannerComponent } from './components/common/navbar-planner/navbar-planner.component';
 import { SelectRoleComponent } from './components/pages/select-role/select-role.component';
 import { ProfileComponent } from './components/pages/profile/profile.component';
+
 import { TripService } from './service/trip-service';
+
+import { BookingPageComponent } from './components/pages/booking-page/booking-page.component';
+
 
 @NgModule({
 	declarations: [
@@ -78,6 +82,7 @@ import { TripService } from './service/trip-service';
 		TestimonialsComponent,
   		MustWatchEpisodesComponent,
 		ContactPageComponent,
+		BookingPageComponent,
 		NotFoundComponent,
 		GalleryPageComponent,
 		TermsOfServicePageComponent,
@@ -116,6 +121,7 @@ import { TripService } from './service/trip-service';
 		HttpClientModule,
 		MatSelectModule,
 		MatIconModule,
+		 
 
 	],
 	providers:[

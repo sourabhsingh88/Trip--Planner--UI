@@ -17,6 +17,9 @@ export class ProfileComponent {
   userId = localStorage.getItem('userId');
   userRole = localStorage.getItem('role');
 
+  
+
+  
 
   public findById(){
   this.userService.findById(this.userId).subscribe(
