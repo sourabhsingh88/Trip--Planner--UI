@@ -37,7 +37,7 @@
                 <div class="single-products-card style-two">
                     <div class="products-image">
                         <a routerLink="/products-details">
-                            <img src="assets/images/products/products-1.png" alt="image">
+                            <img [src]="'http://localhost:1002/booking-service-api-local/trips/' + trip.imgURL" alt="image">
                         </a>
                     </div>
                     <div class="products-content">
