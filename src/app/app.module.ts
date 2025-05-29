@@ -55,6 +55,7 @@ import { HometwoBannerUserComponent } from './components/pages/home-demo-two-use
 import { NavbarPlannerComponent } from './components/common/navbar-planner/navbar-planner.component';
 import { SelectRoleComponent } from './components/pages/select-role/select-role.component';
 import { ProfileComponent } from './components/pages/profile/profile.component';
+import { BookingPageComponent } from './components/pages/booking-page/booking-page.component';
 
 @NgModule({
 	declarations: [
@@ -77,6 +78,7 @@ import { ProfileComponent } from './components/pages/profile/profile.component';
 		TestimonialsComponent,
   		MustWatchEpisodesComponent,
 		ContactPageComponent,
+		BookingPageComponent,
 		NotFoundComponent,
 		GalleryPageComponent,
 		TermsOfServicePageComponent,
@@ -115,6 +117,7 @@ import { ProfileComponent } from './components/pages/profile/profile.component';
 		HttpClientModule,
 		MatSelectModule,
 		MatIconModule,
+		 
 
 	],
 	providers:[
