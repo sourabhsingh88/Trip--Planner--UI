@@ -1,0 +1,96 @@
+.single-season-list-desc {
+    max-width: 1150px;
+    margin: {
+        left: auto;
+        right: auto;
+    };
+}
+.single-season-list-content {
+    padding: 15px 30px;
+    margin-top: 25px;
+    border-radius: 10px;
+    background-color: #221D48;
+
+    .image {
+        border-radius: 10px;
+
+        img {
+            border-radius: 10px;
+        }
+    }
+    .playlist-list {
+        padding-left: 0;
+        list-style-type: none;
+        margin: {
+            top: 15px;
+            bottom: 20px;
+        };
+        li {
+            color: var(--paragraph-color);
+            display: inline-block;
+            margin-right: 20px;
+            position: relative;
+            padding-left: 20px;
+
+            &::after {
+                left: 0;
+                top: 50%;
+                width: 10px;
+                content: "";
+                height: 10px;
+                position: absolute;
+                border-radius: 50px;
+                background: #8C88AC;
+                transition: all ease 0.5s;
+                transform: translateY(-50%);
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .single-season-list-desc {
+        max-width: 100%;
+    }
+    .single-season-list-content {
+        padding: 15px 15px 0;
+    
+        .playlist-list {
+            li {
+                &::after {
+                    margin-top: -2px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .single-season-list-content {
+        padding: 30px 30px 10px;
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

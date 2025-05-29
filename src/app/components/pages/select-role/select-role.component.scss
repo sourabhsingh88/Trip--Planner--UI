@@ -1,0 +1,36 @@
+.container {
+  max-width: 500px;
+  margin: 100px auto;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.role-button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #007bff, #4facfe);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.role-button:hover {
+  background: linear-gradient(135deg, #0056b3, #3282ff);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 123, 255, 0.2);
+}

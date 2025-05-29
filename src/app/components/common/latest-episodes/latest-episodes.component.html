@@ -1,0 +1,138 @@
+
+
+<!-- Latest Episodes Only for Home Demo - 2 -->
+<div 
+    class="episode-area ptb-100 bg-ffffff d-none"
+    [ngClass]="{'d-block' : router.url === '/index-2' || router.url === '/index-3', 'bg-f1eff5' : router.url === '/index-3'}"
+>
+    <div class="container">
+        <div class="section-title-center">
+            <!-- <div class="search-overlay-form">
+                <form>
+                    <input type="text" class="input-search" placeholder="Search here...">
+                    <button type="submit"><i class="flaticon-loupe"></i></button>
+                </form>
+            </div> -->
+            <h2>Latest Episodes</h2>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="episode-single-card">
+                    <div class="episode-image">
+                        <a routerLink="/single-episode">
+                            <img src="assets/images/episode/episode-1.jpg" alt="image">
+                        </a>
+                        <div class="episode-video-view">
+                            <a routerLink="/single-episode" class="popup-youtube">
+                                <i class="ri-play-mini-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="episode-content">
+                        <ul class="episode-list d-flex justify-content-between">
+                            <li>
+                                <span>
+                                    7th Dec, 2024
+                                </span>
+                            </li>
+                            <li>Episodes: 16</li>
+                        </ul>
+                        <h3>
+                            <a routerLink="/single-episode">
+                                Tube Preamps, TLM103 vs. OJ 818, Podcastage's Beanies
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="episode-single-card">
+                    <div class="episode-image">
+                        <a routerLink="/single-episode">
+                            <img src="assets/images/episode/episode-2.jpg" alt="image">
+                        </a>
+                        <div class="episode-video-view">
+                            <a routerLink="/single-episode" class="popup-youtube">
+                                <i class="ri-play-mini-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="episode-content">
+                        <ul class="episode-list d-flex justify-content-between">
+                            <li>
+                                <span>1st Dec, 2024</span>
+                            </li>
+                            <li>Episodes: 21</li>
+                        </ul>
+                        <h3>
+                            <a routerLink="/single-episode">
+                                Ask Unladylike: Late Bloomer with Forever 35
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="episode-single-card">
+                    <div class="episode-image">
+                        <a routerLink="/single-episode">
+                            <img src="assets/images/episode/episode-3.jpg" alt="image">
+                        </a>
+                        <div class="episode-video-view">
+                            <a routerLink="/single-episode" class="popup-youtube">
+                                <i class="ri-play-mini-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="episode-content">
+                        <ul class="episode-list d-flex justify-content-between">
+                            <li>
+                                <span>
+                                    27th Dec, 2024
+                                </span>
+                            </li>
+                            <li>Episodes: 11</li>
+                        </ul>
+                        <h3>
+                            <a routerLink="/single-episode">
+                                How to Effectively Incentivize Team Members
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="episode-single-card">
+                    <div class="episode-image">
+                        <a routerLink="/single-episode">
+                            <img src="assets/images/episode/episode-4.jpg" alt="image">
+                        </a>
+                        <div class="episode-video-view">
+                            <a routerLink="/single-episode" class="popup-youtube">
+                                <i class="ri-play-mini-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="episode-content">
+                        <ul class="episode-list d-flex justify-content-between">
+                            <li>
+                                <span>
+                                    15th Dec, 2024
+                                </span>
+                            </li>
+                            <li>Episodes: 18</li>
+                        </ul>
+                        <h3>
+                            <a routerLink="/single-episode">
+                                How to go from Start-Up to Scale-Up
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="browse-all-btn black-color">
+            <a routerLink="/episode-list">Browse All Episodes <i class="ri-arrow-right-s-line"></i></a>
+        </div>
+    </div>
+</div>

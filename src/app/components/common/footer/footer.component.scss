@@ -1,0 +1,194 @@
+.single-footer-widget {
+    margin-bottom: 25px;
+
+    h3 {
+        margin-bottom: 25px;
+        font-size: 22px;
+    }
+    .widget-logo {
+        margin-bottom: 25px;
+    }
+    .color-text {
+        background: var(--main-gradient-color);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        margin-bottom: 25px;
+        text-align: end;
+        font: {
+            size: 20px;
+            weight: bold;
+        };
+    }
+    .widget-info {
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style-type: none;
+
+        li {
+            margin-bottom: 15px;
+
+            a {
+                color: var(--paragraph-color);
+
+                &:hover {
+                    color: var(--main-color);
+                }
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    .widget-social {
+        padding-left: 0;
+        text-align: end;
+        margin-bottom: 0;
+        list-style-type: none;
+
+        li {
+            display: inline-block;
+            margin-right: 8px;
+
+            a {
+                i {
+                    width: 45px;
+                    height: 45px;
+                    font-size: 18px;
+                    line-height: 55px;
+                    text-align: center;
+                    border-radius: 50px;
+                    display: inline-block;
+                    color: var(--white-color);
+                    background-color: #221D48;
+                    transition: var(--transition);
+
+                    &:hover {
+                        background-color: var(--main-color);
+                    }
+                }
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    &.pl-10 {
+        padding-left: 10rem;
+    }
+}
+.copyright-area {
+    margin-top: 75px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: {
+        top: 30px;
+        bottom: 30px;
+    };
+    p {
+        font-weight: 500;
+
+        span {
+            color: var(--white-color);
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .single-footer-widget {
+        .widget-info {
+            li {
+                font-size: 15px;
+            }
+        }
+        h3 {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        .color-text {
+            margin-bottom: 20px;
+            text-align: start;
+            font-size: 18px;
+        }
+        &.pl-10 {
+            padding-left: 0;
+        }
+        .widget-social {
+            text-align: start;
+
+            li {
+                a {
+                    i {
+                        width: 35px;
+                        height: 35px;
+                        font-size: 15px;
+                        line-height: 43px;
+                    }
+                }
+            }
+        }        
+    }
+    .copyright-area {
+        margin-top: 35px;
+        padding: {
+            top: 25px;
+            bottom: 25px;
+        };
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .single-footer-widget {
+        &.pl-10 {
+            padding-left: 4rem;
+        }     
+    }
+    .copyright-area {
+        margin-top: 55px;
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .single-footer-widget {
+        &.pl-10 {
+            padding-left: 4rem;
+        }
+        .widget-social {
+            li {
+                a {
+                    i {
+                        width: 40px;
+                        height: 40px;
+                        font-size: 15px;
+                        line-height: 49px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .single-footer-widget {
+        &.pl-10 {
+            padding-left: 7rem;
+        }
+    }
+
+}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}
