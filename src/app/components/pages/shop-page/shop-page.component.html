@@ -1,63 +1,39 @@
 
 
 <!-- Products -->
+<form >
+    <div class="search-bar">
+    <form >
+            <input type="text" class="input-search" [(ngModel)]="filterData.keyword" name="keyword" placeholder="Search here..." (input)="onFilterChange()" />
+            </form>
+    </div>
 
-<div class="search-bar">
-    <form>
-        <input type="text" class="input-search" placeholder="Search here...">
-        <button type="submit"><i class="flaticon-loupe"></i></button>
-    </form>
-</div>
 
+    <div style="display: flex; justify-content: center ; margin-top: 100px; gap: 100px;">
 
-<div style="display: flex; justify-content: center ; margin-top: 100px; gap: 100px;">
+        <div class="custom-select">
+            <input type="text" [(ngModel)]="filterData.to" name="to" placeholder="TO :" (input)="onFilterChange()"/>
+        </div>
+        <div class="custom-select" style="width:200px;">
+            <input type="text" [(ngModel)]="filterData.from" name="from" placeholder="From" (input)="onFilterChange()" />
+        </div>
 
-    <div class="custom-select">
-        <select>
-          <option value="0">Select car:</option>
-          <option value="1">Audi</option>
-          <option value="2">BMW</option>
-          <option value="3">Citroen</option>
-          <option value="4">Ford</option>
-        </select>
-      </div>
-      <div class="custom-select" style="width:200px;">
-        <select>
-          <option value="0">Select car:</option>
-          <option value="1">Audi</option>
-          <option value="2">BMW</option>
-          <option value="3">Citroen</option>
-          <option value="4">Ford</option>
-        </select>
-      </div>
+        <div class="custom-select" style="width:200px;">
+            <input type="text" [(ngModel)]="filterData.duration" name="duration" placeholder="Duration :" (input)="onFilterChange()"/>
+        </div>
+        <div class="custom-select" style="width:200px;">
+            <input type="text" placeholder="Price : ">
+        </div>
+        
+        
+    </div>
+</form>  
 
-      <div class="custom-select" style="width:200px;">
-        <select>
-          <option value="0">Select car:</option>
-          <option value="1">Audi</option>
-          <option value="2">BMW</option>
-          <option value="3">Citroen</option>
-          <option value="4">Ford</option>
-        </select>
-      </div>
-      <div class="custom-select" style="width:200px;">
-        <select>
-          <option value="0">Select car:</option>
-          <option value="1">Audi</option>
-          <option value="2">BMW</option>
-          <option value="3">Citroen</option>
-          <option value="4">Ford</option>
-        </select>
-      </div>
-    
-    
-</div>
-  
   
 <div class="products-area ptb-100">
     <div class="container">
         <div class="row justify-content-center ">
-            <div class="col-lg-3 col-sm-6">
+            <div class="col-lg-3 col-sm-6" *ngFor="let trip of trips">
                 <div class="single-products-card style-two">
                     <div class="products-image">
                         <a routerLink="/products-details">
@@ -67,10 +43,10 @@
                     <div class="products-content">
                         <h3>
                             <a routerLink="/products-details">
-                                Designer T-Shirt
+                                {{ trip.name }}
                             </a>
                         </h3>
-                        <span>$20</span>
+                        <span>${{ trip.price }}</span>
                     </div>
                     <ul class="products-action">
                         <li><a routerLink="/products-details"><i class="ri-eye-fill"></i></a></li>
@@ -78,164 +54,36 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-products-card style-two">
-                    <div class="products-image">
-                        <a routerLink="/products-details">
-                            <img src="assets/images/products/products-2.png" alt="image">
-                        </a>
-                    </div>
-                    <div class="products-content">
-                        <h3>
-                            <a routerLink="/products-details">
-                                White Headphone
-                            </a>
-                        </h3>
-                        <span>$150</span>
-                    </div>
-                    <ul class="products-action">
-                        <li><a routerLink="/products-details"><i class="ri-eye-fill"></i></a></li>
-                        <li><a routerLink="/cart"><i class="ri-shopping-cart-line"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-products-card style-two">
-                    <div class="products-image">
-                        <a routerLink="/products-details">
-                            <img src="assets/images/products/products-3.png" alt="image">
-                        </a>
-                    </div>
-                    <div class="products-content">
-                        <h3>
-                            <a routerLink="/products-details">
-                                Vintage Disk
-                            </a>
-                        </h3>
-                        <span>$50</span>
-                    </div>
-                    <ul class="products-action">
-                        <li><a routerLink="/products-details"><i class="ri-eye-fill"></i></a></li>
-                        <li><a routerLink="/cart"><i class="ri-shopping-cart-line"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-products-card style-two">
-                    <div class="products-image">
-                        <a routerLink="/products-details">
-                            <img src="assets/images/products/products-4.png" alt="image">
-                        </a>
-                    </div>
-                    <div class="products-content">
-                        <h3>
-                            <a routerLink="/products-details">
-                                Purple Headphone
-                            </a>
-                        </h3>
-                        <span>$30</span>
-                    </div>
-                    <ul class="products-action">
-                        <li><a routerLink="/products-details"><i class="ri-eye-fill"></i></a></li>
-                        <li><a routerLink="/cart"><i class="ri-shopping-cart-line"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-products-card style-two">
-                    <div class="products-image">
-                        <a routerLink="/products-details">
-                            <img src="assets/images/products/products-5.png" alt="image">
-                        </a>
-                    </div>
-                    <div class="products-content">
-                        <h3>
-                            <a routerLink="/products-details">
-                                Cotton T-shirt
-                            </a>
-                        </h3>
-                        <span>$55</span>
-                    </div>
-                    <ul class="products-action">
-                        <li><a routerLink="/products-details"><i class="ri-eye-fill"></i></a></li>
-                        <li><a routerLink="/cart"><i class="ri-shopping-cart-line"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-products-card style-two">
-                    <div class="products-image">
-                        <a routerLink="/products-details">
-                            <img src="assets/images/products/products-6.png" alt="image">
-                        </a>
-                    </div>
-                    <div class="products-content">
-                        <h3>
-                            <a routerLink="/products-details">
-                                Yellow Headphone
-                            </a>
-                        </h3>
-                        <span>$150</span>
-                    </div>
-                    <ul class="products-action">
-                        <li><a routerLink="/products-details"><i class="ri-eye-fill"></i></a></li>
-                        <li><a routerLink="/cart"><i class="ri-shopping-cart-line"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-products-card style-two">
-                    <div class="products-image">
-                        <a routerLink="/products-details">
-                            <img src="assets/images/products/products-7.png" alt="image">
-                        </a>
-                    </div>
-                    <div class="products-content">
-                        <h3>
-                            <a routerLink="/products-details">
-                                Black Headphone
-                            </a>
-                        </h3>
-                        <span>$50</span>
-                    </div>
-                    <ul class="products-action">
-                        <li><a routerLink="/products-details"><i class="ri-eye-fill"></i></a></li>
-                        <li><a routerLink="/cart"><i class="ri-shopping-cart-line"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-products-card style-two">
-                    <div class="products-image">
-                        <a routerLink="/products-details">
-                            <img src="assets/images/products/products-8.png" alt="image">
-                        </a>
-                    </div>
-                    <div class="products-content">
-                        <h3>
-                            <a routerLink="/products-details">
-                                Unique T-Shirt
-                            </a>
-                        </h3>
-                        <span>$30</span>
-                    </div>
-                    <ul class="products-action">
-                        <li><a routerLink="/products-details"><i class="ri-eye-fill"></i></a></li>
-                        <li><a routerLink="/cart"><i class="ri-shopping-cart-line"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-12 col-md-12">
-                <div class="pagination-area">
-                    <div class="nav-links">
-                        <a routerLink="/shop" class="prev page-numbers">prev</a>
-                        <span class="page-numbers current">1</span>
-                        <a routerLink="/shop" class="page-numbers">2</a>
-                        <a routerLink="/shop" class="page-numbers">3</a>
-                        <a routerLink="/shop" class="next page-numbers">next</a>
-                    </div>
-                </div>
-            </div>
+                 <div class="col-lg-12 col-md-12">
+  <div class="pagination-area">
+    <div class="nav-links">
+      <a 
+        class="prev page-numbers" 
+        (click)="prevPage()" 
+        [class.disabled]="page === 0"
+        style="cursor: pointer;"
+      >Prev</a>
+
+      <span 
+        class="page-numbers" 
+        *ngFor="let p of totalPagesArray; let i = index"
+        [class.current]="i === page"
+        (click)="goToPage(i)"
+        style="cursor: pointer;"
+      >
+        {{ i + 1 }}
+      </span>
+
+      <a 
+        class="next page-numbers" 
+        (click)="nextPage()" 
+        [class.disabled]="page >= totalPages - 1"
+        style="cursor: pointer;"
+      >Next</a>
+    </div>
+  </div>
+</div>
+
         </div>
     </div>
 </div>

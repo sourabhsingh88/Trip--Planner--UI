@@ -55,6 +55,7 @@ import { HometwoBannerUserComponent } from './components/pages/home-demo-two-use
 import { NavbarPlannerComponent } from './components/common/navbar-planner/navbar-planner.component';
 import { SelectRoleComponent } from './components/pages/select-role/select-role.component';
 import { ProfileComponent } from './components/pages/profile/profile.component';
+import { TripService } from './service/trip-service';
 
 @NgModule({
 	declarations: [
@@ -101,7 +102,7 @@ import { ProfileComponent } from './components/pages/profile/profile.component';
 		NavbarUserComponent,
 		NavbarPlannerComponent,
 		SelectRoleComponent,
-		ProfileComponent
+		ProfileComponent,
 	],
 	imports: [
         BrowserModule,
@@ -118,7 +119,8 @@ import { ProfileComponent } from './components/pages/profile/profile.component';
 
 	],
 	providers:[
-        UserService
+        UserService,
+		TripService
     ],
 	bootstrap: [AppComponent]
 })
