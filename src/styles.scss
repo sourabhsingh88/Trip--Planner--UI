@@ -125,7 +125,7 @@ img {
         background: var(--main-gradient-color);
         transform: translateX(-50%) translateY(-5%) scale(.4);
     }
-    
+
     &:hover {
         color: var(--white-color);
 
@@ -398,7 +398,7 @@ audio {
     top: 115px;
     position: relative;
     background: {
-        image: url(assets/images/page-banner/page-banner-bg-1.jpg);
+        image: url(assets/images/contact-us-banner.png);
         position: center center;
         repeat: no-repeat;
         size: cover;
@@ -421,13 +421,13 @@ audio {
         background: var(--black-color);
     }
     &.bg-2 {
-        background-image: url(assets/images/page-banner/page-banner-bg-2.jpg);
+        background-image: url(assets/images/contact-us-banner.png);
     }
     &.bg-3 {
-        background-image: url(assets/images/page-banner/page-banner-bg-3.jpg);
+        background-image: url(assets\images\contact-us-banner.png);
     }
     &.bg-4 {
-        background-image: url(assets/images/page-banner/page-banner-bg-4.jpg);
+        background-image: url(assets\images\contact-us-banner.png);
     }
 }
 .page-banner-content {
@@ -469,7 +469,7 @@ audio {
             a {
                 display: block;
                 color: var(--white-color);
-                
+
                 &:hover {
                     color: var(--white-color);
                 }
@@ -515,7 +515,7 @@ audio {
     &.black-color {
         a {
             color: var(--main-color);
-    
+
             &:hover {
                 color: var(--black-color);
             }
@@ -545,7 +545,7 @@ audio {
     }
     .page-numbers {
         width: 45px;
-        height: 45px; 
+        height: 45px;
         overflow: hidden;
         line-height: 48px;
         border-radius: 50%;
@@ -865,7 +865,7 @@ audio {
                 li {
                     margin-bottom: 12px;
                     color: var(--paragraph-color);
-                    
+
                     strong {
                         color: var(--white-color);
 						font-weight: 500;
@@ -873,7 +873,7 @@ audio {
                     a {
                         color: var(--white-color);
                         text-decoration: underline;
-    
+
                         &:hover {
                             text-decoration: none;
                         }
@@ -976,7 +976,7 @@ audio {
                 transform: unset;
                 position: relative;
                 visibility: visible;
-    
+
                 [class*=owl-] {
                     width: 40px;
                     height: 40px;
@@ -1072,7 +1072,7 @@ audio {
         .owl-theme {
             .owl-nav {
                 margin-top: 25px;
-    
+
                 [class*=owl-] {
                     left: 0;
                     top: unset;
