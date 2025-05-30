@@ -23,22 +23,26 @@
                 <div class="products-details-image slider-container">
                     <button class="prev-btn" (click)="prevSlide()">&#10094;</button>
 
-                    <img [src]="images[currentIndex]" alt="product image" *ngIf="images.length > 0">
+                    <img [src]="'http://localhost:1002/booking-service-api-local/tripBanners/' + tripResponseList.tripBannerResponseModals[currentIndex]?.url"
+                        alt="trip image" *ngIf="tripResponseList.tripBannerResponseModals?.length > 0">
+
 
                     <button class="next-btn" (click)="nextSlide()">&#10095;</button>
 
                     <div class="dots">
-                        <span *ngFor="let img of images; let i = index" [class.active]="i === currentIndex"
-                            (click)="currentIndex = i"></span>
+                        <span *ngFor="let img of tripResponseList.tripBannerResponseModals; let i = index"
+                            [class.active]="i === currentIndex" (click)="currentIndex = i"></span>
                     </div>
                 </div>
+
+
 
             </div>
             <div class="col-lg-6 col-md-12">
                 <div class="products-details-desc">
-                    <h3>Purple Headphone</h3>
+                    <h3>{{ tripResponseList.name }}</h3>
                     <div class="price">
-                        <span class="new-price">$200</span>
+                        <span class="new-price">${{ tripResponseList.price }}</span>
                         <span class="old-price">$210</span>
                     </div>
                     <p>Lorem ipsum dolor sit amet consectetur adipiscing elit cras magna ultrices sollicitudin nisl

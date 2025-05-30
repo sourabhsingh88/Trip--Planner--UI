@@ -42,7 +42,7 @@ const routes: Routes = [
     {path: 'shop', component: ShopPageComponent},
     {path: 'cart', component: CartPageComponent},
     {path: 'checkout', component: CheckoutPageComponent},
-    {path: 'products-details', component: ProductDetailsPageComponent},
+    {path: 'products-details/:id', component: ProductDetailsPageComponent},
     {path: 'season-list', component: SeasonListPageComponent},
     {path: 'single-season', component: SingleSeasonPageComponent},
     {path: 'episode-list', component: EpisodeListPageComponent},

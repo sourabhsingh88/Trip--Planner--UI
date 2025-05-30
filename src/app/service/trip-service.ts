@@ -1,12 +1,14 @@
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { URLService } from "./url-service";
+import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class TripService{
     private baseUrl = 'http://localhost:1002/booking-service-api-local/trip';
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient,private urlService : URLService) {}
 
   filterTrips(page: number, size: number, filters: any) {
     let params = new HttpParams()
@@ -21,4 +23,7 @@ export class TripService{
 
     return this.http.get(`${this.baseUrl}/filterBy`, { params });
   }
+  public findById(tripId: any) :Observable<any>{
+          return this.http.get(this.urlService.tripFindByAPI + tripId)
+      }
 }

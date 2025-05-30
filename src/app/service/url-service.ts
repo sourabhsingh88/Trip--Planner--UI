@@ -9,6 +9,10 @@ export class URLService{
     public readonly userSaveAPI: string = this.baseURL + "user/signup";
     public readonly userLoginAPI: string = this.baseURL + "user/login";
     public readonly userFindByIdAPI: string = this.baseURL + "user/byId?id=";
+
+
+     public readonly tripFindByAPI: string = this.baseURL + "trip/byid?id=";
+    
     
 
 
