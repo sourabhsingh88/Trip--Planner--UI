@@ -12,17 +12,17 @@
     <div style="display: flex; justify-content: center ; margin-top: 100px; gap: 100px;">
 
         <div class="custom-select">
-            <input type="text" [(ngModel)]="filterData.to" name="to" placeholder="TO :" (input)="onFilterChange()"/>
+            <input type="text" [(ngModel)]="filterData.to" class="custom-search" placeholder="TO :" (input)="onFilterChange()"/>
         </div>
         <div class="custom-select" style="width:200px;">
-            <input type="text" [(ngModel)]="filterData.from" name="from" placeholder="From" (input)="onFilterChange()" />
+            <input type="text" [(ngModel)]="filterData.from" class="custom-search" name="from" placeholder="From" (input)="onFilterChange()" />
         </div>
 
         <div class="custom-select" style="width:200px;">
-            <input type="text" [(ngModel)]="filterData.duration" name="duration" placeholder="Duration :" (input)="onFilterChange()"/>
+            <input type="text" [(ngModel)]="filterData.duration" class="custom-search" name="duration" placeholder="Duration :" (input)="onFilterChange()"/>
         </div>
         <div class="custom-select" style="width:200px;">
-            <input type="text" placeholder="Price : ">
+            <input type="text" class="custom-search" placeholder="Price : ">
         </div>
         
         
