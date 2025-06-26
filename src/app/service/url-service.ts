@@ -11,7 +11,14 @@ export class URLService{
     public readonly userFindByIdAPI: string = this.baseURL + "user/byId?id=";
 
 
-     public readonly tripFindByAPI: string = this.baseURL + "trip/byid?id=";
+    public readonly tripFindByAPI: string = this.baseURL + "trip/byid?id=";
+
+
+    public readonly aboutUsFindBy: string = this.baseURL + "aboutUs/findBy?id=";
+    
+
+    public readonly galleryAllAPI: string = this.baseURL + "gallery/all";
+     
     
     
 
