@@ -1,49 +1,38 @@
+<!-- Page Banner -->
 <div class="page-banner-area ptb-100">
-    <div class="container">
-        <div class="page-banner-content">
-            <h2>Gallery</h2>
-            <ul>
-                <li>
-                    <a routerLink="/">
-                        Home
-                    </a>
-                </li>
-                <li>Gallery</li>
-            </ul>
-        </div>
+  <div class="container">
+    <div class="page-banner-content">
+      <h2>Gallery</h2>
+      <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li>Gallery</li>
+      </ul>
     </div>
+  </div>
 </div>
 
+<!-- Gallery Area -->
 <div class="gallery-area pt-100 pb-75">
-    <div class="container">
-        <lightgallery class="row" [settings]="settings" [onBeforeSlide]="onBeforeSlide">
-            <a href="assets/images/gallery/gallery-1.jpg" class="single-gallery-item col-lg-4 col-md-6 col-sm-6">
-                <img src="assets/images/gallery/gallery-1.jpg" alt="image">
-            </a>
-            <a href="assets/images/gallery/gallery-2.jpg" class="single-gallery-item col-lg-4 col-md-6 col-sm-6">
-                <img src="assets/images/gallery/gallery-2.jpg" alt="image">
-            </a>
-            <a href="assets/images/gallery/gallery-3.jpg" class="single-gallery-item col-lg-4 col-md-6 col-sm-6">
-                <img src="assets/images/gallery/gallery-3.jpg" alt="image">
-            </a>
-            <a href="assets/images/gallery/gallery-4.jpg" class="single-gallery-item col-lg-4 col-md-6 col-sm-6">
-                <img src="assets/images/gallery/gallery-4.jpg" alt="image">
-            </a>
-            <a href="assets/images/gallery/gallery-5.jpg" class="single-gallery-item col-lg-4 col-md-6 col-sm-6">
-                <img src="assets/images/gallery/gallery-5.jpg" alt="image">
-            </a>
-            <a href="assets/images/gallery/gallery-6.jpg" class="single-gallery-item col-lg-4 col-md-6 col-sm-6">
-                <img src="assets/images/gallery/gallery-6.jpg" alt="image">
-            </a>
-            <a href="assets/images/gallery/gallery-7.jpg" class="single-gallery-item col-lg-4 col-md-6 col-sm-6">
-                <img src="assets/images/gallery/gallery-7.jpg" alt="image">
-            </a>
-            <a href="assets/images/gallery/gallery-8.jpg" class="single-gallery-item col-lg-4 col-md-6 col-sm-6">
-                <img src="assets/images/gallery/gallery-8.jpg" alt="image">
-            </a>
-            <a href="assets/images/gallery/gallery-9.jpg" class="single-gallery-item col-lg-4 col-md-6 col-sm-6">
-                <img src="assets/images/gallery/gallery-9.jpg" alt="image">
-            </a>
-        </lightgallery>
+  <div class="container">
+    <lightgallery class="row" [settings]="settings" [onBeforeSlide]="onBeforeSlide">
+      <a
+        *ngFor="let img of images"
+        class="single-gallery-item col-lg-4 col-md-6 col-sm-6"
+        [href]="'http://localhost:1002/booking-service-api-local/gallery/' + img.image"
+
+
+      >
+        <img
+          [src]="'http://localhost:1002/booking-service-api-local/gallery/' + img.image"
+          alt="gallery image"
+          loading="lazy"
+        />
+      </a>
+    </lightgallery>
+
+    <!-- Optional: Loading Indicator -->
+    <div *ngIf="loading" class="text-center mt-3">
+      <p>Loading more images...</p>
     </div>
+  </div>
 </div>

@@ -59,6 +59,8 @@ import { ProfileComponent } from './components/pages/profile/profile.component';
 import { TripService } from './service/trip-service';
 
 import { BookingPageComponent } from './components/pages/booking-page/booking-page.component';
+import { AboutUsService } from './service/aboutUs-service';
+import { GalleryService } from './service/gallery-service';
 
 
 @NgModule({
@@ -126,7 +128,9 @@ import { BookingPageComponent } from './components/pages/booking-page/booking-pa
 	],
 	providers:[
         UserService,
-		TripService
+		TripService,
+		AboutUsService,
+		GalleryService
     ],
 	bootstrap: [AppComponent]
 })

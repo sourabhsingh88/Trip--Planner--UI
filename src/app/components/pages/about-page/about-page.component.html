@@ -21,21 +21,20 @@
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-12">
                 <div class="about-image">
-                    <img src="assets\images\about.png" alt="image">
+                    <img [src]="'http://localhost:1002/booking-service-api-local/aboutUs/' + aboutUs.imgUrl " alt="image">
                 </div>
             </div>
             <div class="col-lg-6 col-md-12">
                 <div class="about-content">
-                    <h2>Some About Us</h2>
-                    <p>India is known for its diverse culture, heritage, and scenic beauty and has always been a popular tourist destination. From the serene backwaters of Kerala to the majestic Himalayas, from the bustling lifestyle cities of Delhi and Mumbai to the beautiful beaches of Goa, from the festival culture to vibrant Rajasthan, India has everything to attract the world. Exploring this vast sweep can become easy when you have the guidance of the Best holiday planner India.</p>
+                    <h2>{{aboutUs.tital}}</h2>
+                    <p>{{aboutUs.description}}</p>
                     <div class="inner-content">
                         <h3>Our Mission</h3>
-                        <p>Our mission is to simplify travel planning by offering intuitive tools, personalized experiences, and seamless coordination for every traveler’s journey.</p>
+                        <p>{{aboutUs.mission}}</p>
                     </div>
                     <div class="inner-content">
                         <h3>Our Vision</h3>
-                        <p>Our vision is to become the leading platform that inspires and empowers travelers to explore the world effortlessly and confidently.
-</p>
+                        <p>{{aboutUs.vision}}</p>
                     </div>
                     <ul class="about-social">
                         <li>
