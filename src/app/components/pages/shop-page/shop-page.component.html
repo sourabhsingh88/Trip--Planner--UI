@@ -35,7 +35,7 @@
         <div class="row justify-content-center ">
             <div class="col-lg-3 col-sm-6" *ngFor="let trip of trips">
                 <div class="single-products-card style-two">
-                    <div class="products-image">
+                    <div class="products-image"> 
 
                         <a [routerLink]="['/products-details', trip.id]">
                             <img [src]="'http://localhost:1002/booking-service-api-local/trips/' + trip.imgURL " alt="image">
@@ -53,8 +53,8 @@
                         <span>${{ trip.price }}</span>
                     </div>
                     <ul class="products-action">
-                        <li><a routerLink="/products-details"><i class="ri-eye-fill"></i></a></li>
-                        <li><a routerLink="/booking"><i class="ri-shopping-cart-line"></i></a></li>
+                        <li><a [routerLink]="['/products-details', trip.id]"><i class="ri-eye-fill"></i></a></li>
+                        <li><a (click)="bookTrip(trip.id)"><i class="ri-shopping-cart-line"></i></a></li>
                     </ul>
                 </div>
             </div>

@@ -9,6 +9,7 @@ export class UserService{
     private roleSubject = new BehaviorSubject<string | null>(null);
     public role$ = this.roleSubject.asObservable();
 
+
     constructor(private httpClient : HttpClient,private urlService : URLService){
         console.log("User Service : Object Created");
         this.loadUserRoleFromStorage(); // Load role on service init
@@ -30,6 +31,8 @@ export class UserService{
     public findByMobileNumber(mobileNumber: any) :Observable<any>{
         return this.httpClient.get(this.urlService.userFindByMobileNumberAPI + mobileNumber)
     }
+
+    
     
     public findAll() :Observable<any>{
         return this.httpClient.get(this.urlService.userFindAllAPI)
@@ -83,8 +86,7 @@ isLoggedIn(): boolean {
   }
 
 logout() {
-  localStorage.removeItem('user');
-  localStorage.removeItem('role');
+  localStorage.clear(); // Removes everything stored
   this.roleSubject.next(null);
 
 }
