@@ -61,6 +61,13 @@ import { TripService } from './service/trip-service';
 import { BookingPageComponent } from './components/pages/booking-page/booking-page.component';
 import { AboutUsService } from './service/aboutUs-service';
 import { GalleryService } from './service/gallery-service';
+import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.component';
+
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { BookingService } from './service/booking-service';
+import { TripPlannerService } from './service/tripplanner-service';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
 @NgModule({
@@ -110,6 +117,7 @@ import { GalleryService } from './service/gallery-service';
 		NavbarPlannerComponent,
 		SelectRoleComponent,
 		ProfileComponent,
+  ConfirmDialogComponent,
 	],
 	imports: [
         BrowserModule,
@@ -123,14 +131,18 @@ import { GalleryService } from './service/gallery-service';
 		HttpClientModule,
 		MatSelectModule,
 		MatIconModule,
-		 
+		MatDialogModule,    
+    	MatButtonModule,
+		InfiniteScrollModule   
 
 	],
 	providers:[
         UserService,
 		TripService,
 		AboutUsService,
-		GalleryService
+		GalleryService,
+		BookingService,
+		TripPlannerService
     ],
 	bootstrap: [AppComponent]
 })

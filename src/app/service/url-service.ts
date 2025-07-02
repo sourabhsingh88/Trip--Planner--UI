@@ -19,9 +19,12 @@ export class URLService{
 
     public readonly galleryAllAPI: string = this.baseURL + "gallery/all";
      
+    public readonly bookingCreateAPI: string = this.baseURL + "booking/create";
+    public readonly bookingFindByUserIdAPI: string = this.baseURL + "booking/byUserId?userId=";
+    public readonly bookingFindByTripplannerIdAPI: string = this.baseURL + "booking/byTripPlannerId?tripplannerId=";
+    public readonly bookingStatusUpdateAPI: string = this.baseURL + "booking/updateStatus";
     
-    
-
+    public readonly tripPlannerFindById: string = this.baseURL + "tripplanner/ApprovedByUserId?userId="; 
 
     public readonly userUpdateAPI: string = this.baseURL + "user?task=userUpdate";
     

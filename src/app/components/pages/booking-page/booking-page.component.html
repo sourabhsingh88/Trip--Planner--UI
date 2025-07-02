@@ -1,44 +1,76 @@
-<div class="page-banner-area bg-3 ptb-100">
-    <div class="container">
-        <div class="page-banner-content">
-            <h2>Contact Us</h2>
-            <ul>
-                <li>
-                    <a routerLink="/">
-                        Home
-                    </a>
-                </li>
-                <li>Contact</li>
-            </ul>
-        </div>
+<div class="booking-list"
+     *ngIf="bookings.length > 0; else noData"
+     infiniteScroll
+     [infiniteScrollDistance]="2"
+     [infiniteScrollThrottle]="300"
+     (scrolled)="onScroll()">
+
+  <div *ngFor="let b of bookings" class="booking-card">
+    <!-- Trip Image -->
+      <!-- <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Package Image" /> -->
+      <img [src]="'http://localhost:1002/booking-service-api-local/trips/' + b.imgUrl " alt="image">
+
+    <!-- Trip Info -->
+    <div class="booking-info">
+      <h3>{{ b.tripName }}</h3>
+      <p><strong>Price:</strong> ₹{{ b.tripPrice }}</p>
+      <p><strong>Status:</strong> {{ b.statusName }}</p>
     </div>
+
+    <!-- ✅ Status Progress Bar -->
+    <div class="status-container">
+      <div class="status-line">
+        <ng-container *ngFor="let s of getStatusSteps(b.statusName); let i = index">
+          <div class="status-step"
+               [ngClass]="{
+                  'prev-done': isPrevDone(b.statusName, i),
+                  'next-done': i < getStatusSteps(b.statusName).length - 1 && getStatusCode(b.statusName) > s.code,
+                  'half-done': getStatusCode(b.statusName) === s.code
+                }">
+            <div class="dot"
+                 [ngClass]="{
+                   'confirmed': isConfirmedStep(s.code, b.statusName),
+                   'rejected': isRejectedStep(s.code, b.statusName),
+                   'done': getStatusCode(b.statusName) >= s.code && !isFinalStep(s.code)
+                 }"
+                 [title]="s.name">
+            </div>
+          </div>
+        </ng-container>
+      </div>
+
+      <!-- Step Labels -->
+      <div class="status-labels">
+        <ng-container *ngFor="let s of getStatusSteps(b.statusName)">
+          <span>{{ s.name }}</span>
+        </ng-container>
+      </div>
+    </div>
+
+    <!-- ✅ Action Buttons -->
+    <div class="button-group" *ngIf="role === 'tripplanner' && b.statusName === 'Request Sent'">
+      <button class="btn success" (click)="changeStatus(b.id, 12)">Accept</button>
+      <button class="btn danger" (click)="changeStatus(b.id, 15)">Reject</button>
+    </div>
+
+    <div class="button-group" *ngIf="role === 'customer' && b.statusName === 'Response Received'">
+      <button class="btn success" (click)="changeStatus(b.id, 13)">Do Payment</button>
+      <button class="btn danger" (click)="changeStatus(b.id, 15)">Not Do</button>
+    </div>
+
+    <div class="button-group" *ngIf="role === 'tripplanner' && b.statusName === 'Payment Pending'">
+      <button class="btn success" (click)="changeStatus(b.id, 14)">Confirm</button>
+      <button class="btn danger" (click)="changeStatus(b.id, 15)">Reject</button>
+    </div>
+  </div>
 </div>
 
-<div class="booking-card">
-  <div class="image-box">
-   <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Package Image" />
-  </div>
+<!-- 🔻 No Data Template -->
+<ng-template #noData>
+  <p class="no-data-text">No bookings found.</p>
+</ng-template>
 
-  <h2 class="package-name">{{ package.name }}</h2>
-
-  <div class="overview-card">
-    <p><strong>Price:</strong> ₹{{ package.price }}</p>
-    <p><strong>Trip From:</strong> {{ package.trip_from }}</p>
-    <p><strong>Trip To:</strong> {{ package.trip_to }}</p>
-  </div>
-
-  <div class="status-container">
-    <div class="status-line">
-      <div class="dot" [ngClass]="{ active: status >= 1 }"></div>
-      <div class="dot" [ngClass]="{ active: status >= 2 }"></div>
-      <div class="dot" [ngClass]="{ active: status >= 3 }"></div>
-      <div class="dot" [ngClass]="{ active: status >= 4 }"></div>
-    </div>
-    <div class="status-labels">
-      <span>Request Sent</span>
-      <span>Response Receive</span>
-      <span>Payment</span>
-      <span>Confirm</span>
-    </div>
-  </div>
+<!-- 🔄 Loader -->
+<div *ngIf="isLoading" class="loader-container">
+  <div class="loader"></div>
 </div>

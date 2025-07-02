@@ -65,6 +65,8 @@
     background-color: var(--main-color); /* Your primary color */
 }
 
+
+
 /* Responsive adjustments */
 @media only screen and (max-width: 767px) {
     .products-details-image {
@@ -316,6 +318,118 @@
 
 }
 
+.trip-section-box {
+  background-color: #1e1e2d; // You can replace with var(--box-bg-color) if defined
+  border-radius: 12px;
+  padding: 25px 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s ease;
+
+  h3, h4 {
+    font-size: 22px;
+    color: var(--white-color);
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 8px;
+  }
+
+  ul {
+    padding-left: 20px;
+
+    li {
+      margin-bottom: 10px;
+      color: var(--paragraph-color);
+      list-style-type: disc;
+    }
+  }
+
+  p, li {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--paragraph-color);
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.products-add-to-cart.trip-section-box {
+  text-align: center;
+
+  .default-btn {
+    background-color: var(--main-color);
+    color: var(--white-color);
+    border-radius: 8px;
+    padding: 14px 35px;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0 8px 24px rgba(50, 44, 96, 0.2);
+    transition: all 0.3s ease-in-out;
+
+    i {
+      margin-right: 8px;
+      font-size: 18px;
+    }
+
+    &:hover {
+      background-color: var(--optional-color);
+      color: var(--white-color);
+      box-shadow: 0 8px 28px rgba(50, 44, 96, 0.3);
+      transform: translateY(-2px);
+    }
+  }
+}
+.products-add-to-cart {
+  margin-top: 40px;
+  text-align: center;
+
+  .book-now-btn {
+    background-color: var(--main-color);
+    color: var(--white-color);
+    border-radius: 10px;
+    padding: 16px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    box-shadow: 0 10px 28px rgba(50, 44, 96, 0.25);
+    transition: all 0.3s ease-in-out;
+
+    i {
+      font-size: 20px;
+      margin-right: 10px;
+    }
+
+    &:hover {
+      background-color: var(--optional-color);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(50, 44, 96, 0.35);
+    }
+  }
+}
+
+// Responsive adjustment
+@media only screen and (max-width: 767px) {
+  .products-add-to-cart .book-now-btn {
+    padding: 14px 30px;
+    font-size: 16px;
+  }
+}
+
+
+@media only screen and (max-width: 767px) {
+  .trip-section-box {
+    padding: 20px 18px;
+  }
+
+  .products-add-to-cart.trip-section-box .default-btn {
+    padding: 12px 25px;
+    font-size: 15px;
+  }
+}
+
+
 /* Min width 576px to Max width 767px */
 @media only screen and (min-width: 576px) and (max-width: 767px) {}
 
@@ -352,3 +466,4 @@
 
 /* Min width 1600px */
 @media only screen and (min-width: 1600px) {}
+
