@@ -1,0 +1,24 @@
+<div class="application-detail-container" *ngIf="application">
+  <h2>Trip Planner Application Summary</h2>
+
+  <div class="detail-box">
+    <img [src]="'http://localhost:1002/booking-service-api-local/user/' + application.profilePhoto" alt="Profile Image" />
+
+
+    <p><strong>Name:</strong> {{ application.name }}</p>
+    <p><strong>Email:</strong> {{ application.email }}</p>
+    <p><strong>Phone:</strong> {{ application.phoneNumber }}</p>
+    <p><strong>Company:</strong> {{ application.companyName }}</p>
+    <p><strong>Experience:</strong> {{ application.experience }} years</p>
+    <p><strong>Status:</strong> 
+      <span [ngClass]="{
+        'status-pending': application.statusName === 'Pending',
+        'status-approved': application.statusName === 'Approved',
+        'status-rejected': application.statusName === 'Rejected'
+      }">
+        {{ application.statusName }}
+      </span>
+    </p>
+    <p><strong>Bio:</strong> {{ application.bio }}</p>
+  </div>
+</div>

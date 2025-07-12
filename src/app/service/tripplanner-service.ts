@@ -12,6 +12,8 @@ export class TripPlannerService {
 
   public findById(userId: number): Observable<any> {
     console.log("Finding trip planner by user ID:", userId);
-    return this.httpClient.get(this.urlService.tripPlannerFindById + userId);
+    return this.httpClient.get(this.urlService.tripPlannerFindApprovedById + userId);
   }
+
+  
 }

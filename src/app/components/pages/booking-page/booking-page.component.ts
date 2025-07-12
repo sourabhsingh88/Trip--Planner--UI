@@ -60,18 +60,28 @@ export class BookingPageComponent implements OnInit {
   }
 
   // ✅ Update Booking Status
-  changeStatus(bookingId: number, newStatusId: number) {
-    const payload = {
-      id: bookingId,
-      statusId: newStatusId
-    };
-    this.bookingService.updateBookingStatus(payload).subscribe(() => {
-      alert('✅ Status updated!');
-      this.page = 0;
-      this.bookings = [];
-      this.loadBookings();
-    });
+ changeStatus(bookingId: number, newStatusId: number) {
+  const rejectedBy = newStatusId === 15
+    ? (this.role === 'customer' ? 'USER' : 'TRIP_PLANNER')
+    : null;
+
+  const payload: any = {
+    id: bookingId,
+    statusId: newStatusId
+  };
+
+  if (rejectedBy) {
+    payload.rejectedBy = rejectedBy;
   }
+
+  this.bookingService.updateBookingStatus(payload).subscribe(() => {
+    alert('✅ Status updated!');
+    this.page = 0;
+    this.bookings = [];
+    this.loadBookings();
+  });
+}
+
 
   // ✅ Get Step Flow Based on Booking Status
   getStatusSteps(statusName: string) {

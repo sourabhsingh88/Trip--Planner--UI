@@ -1,0 +1,68 @@
+.application-list {
+  max-width: 800px;
+  margin: 30px auto;
+  font-family: 'Segoe UI', sans-serif;
+
+  h2 {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 24px;
+  }
+
+  .apply-btn-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+
+    button {
+      font-weight: bold;
+      padding: 10px 24px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+  }
+
+  .application-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 16px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+    p {
+      margin: 6px 0;
+      font-size: 15px;
+      color: #333;
+
+      strong {
+        font-weight: 500;
+      }
+    }
+
+    .status-pending {
+      color: #f39c12;
+      font-weight: 500;
+    }
+
+    .status-approved {
+      color: #2ecc71;
+      font-weight: 500;
+    }
+
+    .status-rejected {
+      color: #e74c3c;
+      font-weight: 500;
+    }
+  }
+
+  .loader,
+  .end-message {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+    color: gray;
+  }
+}

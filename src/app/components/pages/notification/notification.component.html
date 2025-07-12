@@ -1,0 +1,38 @@
+<div class="notification-container">
+  <h2>🔔 Notifications</h2>
+
+  <div 
+    *ngFor="let notif of notifications" 
+    class="notification-card" 
+    [ngClass]="{ 'unread': notif.statusId === 1 }"
+    (click)="onNotificationClick(notif)"
+    style="cursor: pointer;"
+  >
+    <div class="notification-icon">
+      <i class="bi bi-bell-fill"></i>
+    </div>
+
+    <div class="notification-content">
+      <div class="notification-header">
+        <h4>{{ notif.title }}</h4>
+        <span class="badge" [ngClass]="{ 'unread-badge': notif.statusId === 1 }">
+          {{ notif.statusName }}
+        </span>
+      </div>
+
+      <p class="message">{{ notif.message }}</p>
+
+      <div class="notification-footer">
+        <div class="sender-info">
+          <i class="bi bi-person-circle"></i> {{ notif.senderName }}
+        </div>
+        <div class="trip-info">
+          <i class="bi bi-geo-alt-fill"></i> {{ notif.tripName }}
+        </div>
+        <div class="timestamp">
+          <i class="bi bi-clock"></i> {{ notif.createdAt | date: 'short' }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
