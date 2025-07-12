@@ -1,0 +1,42 @@
+<h2 mat-dialog-title class="dialog-title">
+  Apply as a Trip Planner
+  <button class="close-btn" (click)="closeDialog()">×</button>
+</h2>
+
+<mat-dialog-content class="dialog-content-scroll">
+  <div class="application-form-container">
+    <form class="application-form" [formGroup]="applicationFormGroup" (ngSubmit)="applyForTripPlanner()">
+
+      <!-- Read-only section -->
+      <div class="form-section">
+        <label>Name</label>
+        <input type="text" [value]="userResponseList.name" readonly />
+
+        <label>Email</label>
+        <input type="email" [value]="userResponseList.email" readonly />
+
+        <label>Date of Birth</label>
+        <input type="date" [value]="formatDate(userResponseList.dob)" readonly />
+
+        <label>Phone Number</label>
+        <input type="text" [value]="userResponseList.phoneNumber" readonly />
+      </div>
+
+      <!-- Editable section -->
+      <div class="form-section">
+        <label>Experience (in Years)</label>
+        <input type="number" formControlName="experience" placeholder="Enter experience" />
+
+        <label>Company Name</label>
+        <input type="text" formControlName="companyName" placeholder="Enter company name" />
+
+        <label>Bio</label>
+        <textarea formControlName="bio" placeholder="Write about yourself"></textarea>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="submit-btn">Submit Application</button>
+      </div>
+    </form>
+  </div>
+</mat-dialog-content>

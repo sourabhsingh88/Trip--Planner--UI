@@ -26,6 +26,10 @@ import { HomeDemoTwoUserComponent } from './components/pages/home-demo-two-user/
 import { SelectRoleComponent } from './components/pages/select-role/select-role.component';
 import { ProfileComponent } from './components/pages/profile/profile.component';
 import { BookingPageComponent } from './components/pages/booking-page/booking-page.component';
+import { NotificationComponent } from './components/pages/notification/notification.component';
+import { ApplicationComponent } from './components/pages/application/application.component';
+import { ApplicationDetailComponent } from './components/pages/application-detail/application.detail.component';
+import { ApplicationListComponent } from './components/pages/application-list/application.list';
 
 const routes: Routes = [
     {path: '', component: HomeDemoTwoComponent},
@@ -54,6 +58,11 @@ const routes: Routes = [
     {path: 'select-role', component: SelectRoleComponent},
     {path: 'profile', component: ProfileComponent},
     {path:'booking' ,component: BookingPageComponent},
+    {path:'notification' ,component: NotificationComponent},
+    {path:'application' ,component: ApplicationComponent},
+    {path:'application-detail/:id' ,component: ApplicationDetailComponent},
+    {path:'application-list' ,component: ApplicationListComponent},
+    
     
     // Here add new pages component
 

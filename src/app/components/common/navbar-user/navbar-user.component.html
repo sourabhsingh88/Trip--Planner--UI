@@ -34,12 +34,12 @@
                     <li class="nav-item"><a routerLink="/booking" class="nav-link" routerLinkActive="active"
                         [routerLinkActiveOptions]="{exact: true}" (click)="toggleClass()">Bookings</a></li>
 
-                        <li class="nav-item"><a routerLink="/contact" class="nav-link" routerLinkActive="active"
+                        <li class="nav-item"><a routerLink="/application-list" class="nav-link" routerLinkActive="active"
                             [routerLinkActiveOptions]="{exact: true}" (click)="toggleClass()">Apply For TripPlanner</a></li>
                 
 
                     <li class="notification">
-                        <a routerLink="/contact" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}" (click)="toggleClass()">
+                        <a routerLink="/notification" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}" (click)="toggleClass()">
                             <div class="position-relative me-3" (click)="onNotificationClick()">
                                 <i class="bi bi-bell"></i>
                                 <span *ngIf="notificationCount > 0" class="badge bg-danger rounded-pill position-absolute top-0 start-100 translate-middle">

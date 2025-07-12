@@ -68,6 +68,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { BookingService } from './service/booking-service';
 import { TripPlannerService } from './service/tripplanner-service';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { NotificationComponent } from './components/pages/notification/notification.component';
+import { NotificationService } from './service/notification-service';
+import { ApplicationComponent } from './components/pages/application/application.component';
+import { ApplicationService } from './service/application-service';
+import { ApplicationDetailComponent } from './components/pages/application-detail/application.detail.component';
+import { ApplicationListComponent } from './components/pages/application-list/application.list';
+import { MatTooltipModule } from '@angular/material/tooltip';
+
 
 
 @NgModule({
@@ -117,7 +125,11 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 		NavbarPlannerComponent,
 		SelectRoleComponent,
 		ProfileComponent,
-  ConfirmDialogComponent,
+  		ConfirmDialogComponent,
+		NotificationComponent,
+		ApplicationComponent,
+		ApplicationDetailComponent,
+		ApplicationListComponent
 	],
 	imports: [
         BrowserModule,
@@ -133,7 +145,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 		MatIconModule,
 		MatDialogModule,    
     	MatButtonModule,
-		InfiniteScrollModule   
+		InfiniteScrollModule,
+		MatTooltipModule
 
 	],
 	providers:[
@@ -142,7 +155,9 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 		AboutUsService,
 		GalleryService,
 		BookingService,
-		TripPlannerService
+		TripPlannerService,
+		NotificationService,
+		ApplicationService,
     ],
 	bootstrap: [AppComponent]
 })

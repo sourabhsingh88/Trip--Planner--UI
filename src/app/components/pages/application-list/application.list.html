@@ -1,0 +1,33 @@
+<div class="application-list">
+    <h2>Your Applications</h2>
+
+    <!-- Apply Button -->
+    <div class="apply-btn-wrapper">
+        <button mat-raised-button color="primary" (click)="handleApplyClick()"
+            matTooltip="You already have an approved application" [matTooltipDisabled]="!hasApprovedApplication()">
+            Apply as Trip Planner
+        </button>
+    </div>
+
+
+    <!-- Application Cards -->
+    <div class="application-card" *ngFor="let app of applications">
+        <a [routerLink]="['/application-detail', app.id]">
+            <p><strong>Company:</strong> {{ app.companyName }}</p>
+            <p><strong>Experience:</strong> {{ app.experience }} years</p>
+            <p><strong>Status:</strong>
+                <span [ngClass]="{
+        'status-pending': app.statusName === 'Pending',
+        'status-approved': app.statusName === 'Approved',
+        'status-rejected': app.statusName === 'Rejected'
+      }">
+                    {{ app.statusName }}
+                </span>
+            </p>
+        </a>
+    </div>
+
+    <!-- Infinite Scroll Loader -->
+    <div *ngIf="loading" class="loader">Loading more...</div>
+    <div *ngIf="lastPage && !loading" class="end-message">No more applications.</div>
+</div>
