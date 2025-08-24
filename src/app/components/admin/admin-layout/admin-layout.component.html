@@ -1,0 +1,16 @@
+<div class="admin-layout">
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+
+  <nav class="sidebar">
+    <h3>Admin Panel</h3>
+    <ul>
+       
+      <li [routerLink]="['/admin/dashboard']" routerLinkActive="active">Dashboard</li>
+      <li [routerLink]="['/admin/users']" routerLinkActive="active">Users</li>
+      <li [routerLink]="['/admin/trips']" routerLinkActive="active">Trips</li>
+      <li [routerLink]="['/admin/selectRole']" routerLinkActive="active">Switch Role</li>
+    </ul>
+  </nav>
+</div>

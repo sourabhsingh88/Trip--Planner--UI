@@ -1,0 +1,51 @@
+<h1>Continue</h1>
+
+<div class="products-area ptb-100">
+    <div class="container">
+        <div class="row justify-content-center ">
+            <div class="col-lg-3 col-sm-6" *ngFor="let trip of trips">
+                <div class="single-products-card style-two">
+                    <div class="products-image">
+
+                        <a [routerLink]="['/products-details', trip.id]">
+                            <img [src]="'http://localhost:1002/booking-service-api-local/trips/' + trip.imgURL "
+                                alt="image">
+
+                        </a>
+                    </div>
+                    <div class="products-content">
+                        <h3>
+                            <a [routerLink]="['/products-details', trip.id]">
+
+                                {{ trip.name }}
+
+                            </a>
+                        </h3>
+                        <span>${{ trip.price }}</span>
+                    </div>
+                    <ul class="products-action">
+                        <li><a [routerLink]="['/products-details', trip.id]"><i class="ri-eye-fill"></i></a></li>
+                        <li><a ><i (click)="toggelStatus(trip.id)" class="ri-shopping-cart-line"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12">
+                <div class="pagination-area">
+                    <div class="nav-links">
+                        <a class="prev page-numbers" (click)="prevPage()" [class.disabled]="page === 0"
+                            style="cursor: pointer;">Prev</a>
+
+                        <span class="page-numbers" *ngFor="let p of totalPagesArray; let i = index"
+                            [class.current]="i === page" (click)="goToPage(i)" style="cursor: pointer;">
+                            {{ i + 1 }}
+                        </span>
+
+                        <a class="next page-numbers" (click)="nextPage()" [class.disabled]="page >= totalPages - 1"
+                            style="cursor: pointer;">Next</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

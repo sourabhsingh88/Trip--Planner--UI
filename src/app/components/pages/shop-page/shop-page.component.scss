@@ -1,73 +1,61 @@
 @import "../../common/products/products.component.scss";
-
 .search-bar {
-    width: 600px;
-    margin-left: 30% ;
-    margin-right: 30%;
-    padding-top: 85px;
+  width: 100%;
+  max-width: 600px;
+  margin: 85px auto 1rem auto; // center horizontally
+  padding: 0 15px;
 
+  form {
+    position: relative;
 
-    form {
-        position: relative;
+    .input-search {
+      width: 100%;
+      height: 60px;
+      border-radius: 30px;
+      padding: 0 60px 0 25px; // space for search icon on right
+      font-size: 16px;
+      border: 2px solid #ffffff;
+      background-color: #fff; // keep background clean
+      color: #000;
 
-        .input-search {
-            border: 0;
-            outline: 0;
-            width: 100%;
-            height: 60px;
-            display: block;
-            border-radius: 30px;
-            padding: 2px 70px 0 25px;
-            color: var(--black-color);
-            border: 1px solid #e1e1e1;
+      &::placeholder {
+        color: #888;
+        transition: 0.3s;
+      }
 
-            &::placeholder {
-                transition: var(--transition);
-                color: var(--black-color);
-            }
+      &:focus {
+        outline: none;
 
-            &:focus {
-                &::placeholder {
-                    color: transparent;
-                }
-            }
+        &::placeholder {
+          color: transparent;
         }
-
-        button {
-            top: 5.5px;
-            right: 7px;
-            width: 50px;
-            height: 50px;
-            border: none;
-            font-size: 20px;
-            line-height: 55px;
-            position: absolute;
-            border-radius: 50%;
-            display: inline-block;
-            color: var(--white-color);
-            transition: var(--transition);
-            background-color: var(--main-color);
-
-            &:hover {
-                background-color: var(--black-color);
-                color: var(--white-color);
-            }
-        }
+      }
     }
-}
 
-.search-overlay-form {
-    opacity: 1;
-    visibility: visible;
-}
-.custom-select select{
-    width: 200px;
-    height: 70px;
-    border-radius: 30px;
-}
-.custom-search{
-    border-radius: 30px;
-    width: 200px;
-    height: 40px;
-    border: 2px solid #ffffff;
+    button {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      width: 45px;
+      height: 45px;
+      border: none;
+      border-radius: 50%;
+      background-color: var(--main-color); // Use your theme color
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      mat-icon {
+        font-size: 20px;
+      }
+
+      &:hover {
+        background-color: #333;
+      }
+    }
+  }
 }

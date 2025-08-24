@@ -1,0 +1,92 @@
+<div class="update-profile-wrapper">
+    <div class="update-profile-card">
+        <h2>Update Your Profile</h2>
+
+        <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+
+            <!-- Image Upload + Preview -->
+            <div class="profile-image-section">
+                <label class="image-label">Profile Image</label>
+
+                <div class="profile-photo-container">
+                    <img [src]="imagePreviewUrl || 'assets/images/atul.png'" alt="Profile" />
+
+                    <!-- Hidden file input -->
+                    <input type="file" id="fileInput" (change)="onImageSelected($event)" accept="image/*" hidden />
+
+                    <!-- Camera Icon -->
+                    <button type="button" class="upload-icon" (click)="triggerFileInput()">
+                        <mat-icon>photo_camera</mat-icon>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Form Fields -->
+            <div class="form-grid">
+                <mat-form-field appearance="fill">
+                    <mat-label>Name</mat-label>
+                    <input matInput formControlName="name" />
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" type="email" />
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Phone Number</mat-label>
+                    <input matInput formControlName="phoneNumber" />
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Date of Birth</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="dob" />
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Gender</mat-label>
+                    <mat-select formControlName="gender">
+                        <mat-option value="MALE">Male</mat-option>
+                        <mat-option value="FEMALE">Female</mat-option>
+                        <mat-option value="OTHER">Other</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+
+                <!-- Inside .form-grid, before the Location field -->
+                <mat-form-field appearance="fill">
+                    <mat-label>State</mat-label>
+                    <mat-select formControlName="state" (selectionChange)="onStateChange($event.value)">
+                        <mat-option *ngFor="let state of states" [value]="state.id">{{ state.stateName }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+
+                <mat-form-field appearance="fill">
+                    <mat-label>City</mat-label>
+                    <mat-select formControlName="city" [disabled]="!cities || !cities.length">
+                        <mat-option *ngFor="let city of cities" [value]="city.id">{{ city.name }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Location</mat-label>
+                    <input matInput formControlName="location" />
+                </mat-form-field>
+
+
+            </div>
+
+            <!-- Submit -->
+            <div class="form-actions">
+                <button mat-raised-button color="primary" type="submit" [disabled]="!profileForm.valid">
+                    Save Changes
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

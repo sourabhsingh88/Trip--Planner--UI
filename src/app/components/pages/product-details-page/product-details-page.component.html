@@ -105,7 +105,22 @@
             </div>
         </div>
         <div class="products-add-to-cart text-center">
-            <button type="button" class="default-btn book-now-btn"  (click)="bookTrip()">
-                <i class="ri-shopping-cart-line"></i> Book Now
+            <!-- 👤 Customer Role -->
+            <button *ngIf="role === 'customer'" mat-raised-button color="primary" (click)="bookTrip()">
+                Book This Trip
             </button>
+
+            <!-- 🧑‍💼 TripPlanner Role -->
+            <!-- If status is 'continue', show Discontinue button -->
+            <button *ngIf="role === 'tripplanner' && tripStatus === 'Continue'" mat-raised-button color="warn"
+                (click)="toggelStatus()">
+                Discontinue Package
+            </button>
+
+            <!-- If status is 'discontinue', show Continue button -->
+            <button *ngIf="role === 'tripplanner' && tripStatus === 'Discontinue'" mat-raised-button color="accent"
+                (click)="toggelStatus()">
+                Continue Package
+            </button>
+
         </div>

@@ -12,6 +12,10 @@ export class URLService{
 
 
     public readonly tripFindByAPI: string = this.baseURL + "trip/byid?id=";
+    public readonly tripAllContinueAPI: string = this.baseURL + "trip/allContinousByTripPlanner";
+    public readonly tripAllDiscontinueAPI: string = this.baseURL + "trip/allDiscontinousByTripPlanner";
+    public readonly tripSaveAPI: string = this.baseURL + "trip/create";
+    public readonly tripToggelStatusAPI: string = this.baseURL + "trip/updateStatus";
 
 
     public readonly aboutUsFindBy: string = this.baseURL + "aboutUs/findBy?id=";
@@ -32,7 +36,12 @@ export class URLService{
     public readonly tripPlannerFindByUserId: string = this.baseURL + "tripplanner/allByUserId?userId="; 
     public readonly tripPlannerFindById: string = this.baseURL + "tripplanner/byId?id=";
 
-    public readonly userUpdateAPI: string = this.baseURL + "user?task=userUpdate";
+
+    public readonly stateFindAllAPI: string= this.baseURL + "state/all"
+    public readonly cityFindAllAPI: string= this.baseURL + "city/all?stateId="
+
+    public readonly userUpdateAPI: string = this.baseURL + "user/fullUpdate";
+
     
     public readonly userFindAllAPI: string = this.baseURL + "user?task=findAll";
     public readonly userFindByMobileNumberAPI: string = this.baseURL + "user?task=findByPhoneNumber&mobileNumber=";

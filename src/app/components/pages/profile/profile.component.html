@@ -13,7 +13,7 @@
       <div class="contact-info">
         <p><strong>Email:</strong> {{ userResponseList.email }}</p>
         <p><strong>Phone:</strong> {{ userResponseList.phoneNumber }}</p>
-        <p><strong>Location:</strong> {{ user.location }}</p>
+        <p><strong>Location:</strong> {{ userResponseList.locationName}}</p>
         <p><strong>DOB:</strong> {{ userResponseList.dob }}</p>
         <p><strong>Gender:</strong> {{ userResponseList.gender }}</p>
        
@@ -21,19 +21,16 @@
 
       </div>
 
-      <div class="about">
-        <h3>About</h3>
-        <p>{{ user.about }}</p>
-      </div>
+      
 
-      <div class="skills" *ngIf="user.skills?.length">
+      <div class="skills">
         <h3>Skills</h3>
         <ul>
           <li *ngFor="let role of userResponseList.roles">{{ role.name }}</li>
         </ul>
       </div>
 
-      <button class="edit-btn">Edit Profile</button>
+      <button class="edit-btn" (click)="goToUpdateProfile()">Edit Profile</button>
     </div>
   </div>
 </div>

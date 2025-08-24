@@ -10,6 +10,6 @@ export class CityService{
     }
 
     public findAllByStateId(stateId : number) :Observable<any> {
-        return this.httpClient.get(this.urlService.cityFindAllByStateIdAPI + stateId);
+        return this.httpClient.get(this.urlService.cityFindAllAPI + stateId);
     }
 }

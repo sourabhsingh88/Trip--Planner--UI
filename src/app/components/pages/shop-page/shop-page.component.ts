@@ -17,10 +17,54 @@ export class ShopPageComponent {
   filterData = {
     to: '',
     from: '',
-    duration: null,
-    price: null,
+    startDuration: null,
+    endDuration: null,
+    startPrice: null,
+    endPrice: null,
     keyword: ''
   };
+
+  durationRanges = [
+    { start: 1, end: 3 },
+    { start: 4, end: 7 },
+    { start: 8, end: 14 },
+    { start: 15, end: 30 },
+    { start: 31, end: 60 }
+  ];
+
+  selectedDurationRange: any = null;
+
+  onDurationRangeChange(selectedRange: any) {
+    if (selectedRange) {
+      this.filterData.startDuration = selectedRange.start;
+      this.filterData.endDuration = selectedRange.end;
+    } else {
+      this.filterData.startDuration = null;
+      this.filterData.endDuration = null;
+    }
+    this.onFilterChange(); // Trigger API
+  }
+
+  priceRanges = [
+    { start: 1000, end: 5000 },
+    { start: 5001, end: 10000 },
+    { start: 10001, end: 20000 },
+    { start: 20001, end: 50000 },
+    { start: 50001, end: 100000 }
+  ];
+
+  selectedPriceRange: any = null;
+
+  onPriceRangeChange(selectedRange: any) {
+    if (selectedRange) {
+      this.filterData.startPrice = selectedRange.start;
+      this.filterData.endPrice = selectedRange.end;
+    } else {
+      this.filterData.startPrice = null;
+      this.filterData.endPrice = null;
+    }
+    this.onFilterChange(); // trigger the filter update
+  }
 
   page = 0;
   size = 12;
@@ -41,7 +85,7 @@ export class ShopPageComponent {
     this.selectedOption = option;
     this.isOpen = false;
   }
-  constructor(private tripService: TripService, private dialog: MatDialog,private bookingService : BookingService,private router: Router) {
+  constructor(private tripService: TripService, private dialog: MatDialog, private bookingService: BookingService, private router: Router) {
     this.filterSubject.pipe(debounceTime(500)).subscribe(() => {
       this.loadFilteredTrips();
     });
@@ -98,7 +142,7 @@ export class ShopPageComponent {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.confirmBooking(tripId); 
+        this.confirmBooking(tripId);
       }
     });
   }
