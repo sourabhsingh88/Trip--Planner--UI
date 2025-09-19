@@ -1,0 +1,134 @@
+.update-profile-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    padding: 40px;
+}
+
+.update-profile-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(14px);
+    border-radius: 15px;
+    padding: 40px;
+    width: 100%;
+    max-width: 850px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    color: #fff;
+
+    h2 {
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 30px;
+        color: #ffffff;
+        font-weight: 600;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .profile-image-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30px;
+
+        .image-label {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .profile-photo-container {
+            position: relative;
+            width: 150px;
+            height: 150px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 4px solid #3f51b5;
+            }
+
+            .upload-icon {
+                position: absolute;
+                bottom: 20px; 
+                right: -10px;
+                background-color: white;
+                border-radius: 50%;
+                border: 3px solid #3f51b5;
+                width: 42px;
+                height: 42px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+                cursor: pointer;
+                z-index: 2;
+                transform: none; 
+                mat-icon {
+                    color: #3f51b5;
+                    font-size: 22px;
+                }
+
+                &:hover {
+                    background-color: #eaeaea;
+                }
+            }
+        }
+
+    }
+
+    .form-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 24px;
+    }
+
+    .form-actions {
+        margin-top: 30px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    
+    ::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+    }
+
+    ::ng-deep .mat-form-field-appearance-fill .mat-form-field-infix {
+        color: #fff;
+    }
+
+    ::ng-deep .mat-input-element,
+    ::ng-deep .mat-select-value {
+        color: #fff !important;
+    }
+
+    ::ng-deep .mat-form-field-label {
+        color: #bbb;
+    }
+
+    ::ng-deep .mat-select-arrow {
+        color: #fff;
+    }
+
+    .full-width {
+        grid-column: span 2;
+    }
+}
+::ng-deep .snackbar-warning {
+  background-color: #ffa000; // amber
+  color: #fff;
+}
+
+::ng-deep .snackbar-error {
+  background-color: #d32f2f; // red
+  color: #fff;
+}
+

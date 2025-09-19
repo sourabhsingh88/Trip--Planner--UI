@@ -10,7 +10,7 @@ export class StateService{
         console.log("State Service : Object Created");
     }
 
-    public findAllByCountryId(countryId : number) :Observable<any> {
-        return this.httpClient.get(this.urlService.stateFindAllByCountryIdAPI + countryId);
+    public findAll() :Observable<any> {
+        return this.httpClient.get(this.urlService.stateFindAllAPI);
     }
 }

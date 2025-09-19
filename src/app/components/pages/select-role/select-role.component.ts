@@ -21,27 +21,30 @@ export class SelectRoleComponent implements OnInit {
   }
 
   selectRole(role: string) {
-    this.userService.setRole(role);
-     this.router.navigate(['/index-2']);
-     if (role === 'tripplanner') {
+  this.userService.setRole(role);
+
+  if (role === 'tripplanner') {
     const user = JSON.parse(localStorage.getItem('user') || '{}');
     const userId = user.id;
+
     this.tripPlannerService.findById(userId).subscribe({
       next: (res: any) => {
         const tripPlannerId = res.data.id;
         localStorage.setItem('tripPlannerId', tripPlannerId);
-        this.router.navigate(['/index-2']);
+        this.router.navigate(['/index-2']); // ✅ Tripplanner ka dashboard
       },
       error: (err) => {
         console.error("TripPlanner not found for userId", err);
         alert("TripPlanner profile not found. Please contact admin.");
       }
     });
-  } else {
-    this.router.navigate(['/index-2']);
+  } 
+  else if (role === 'admin') {
+    this.router.navigate(['/admin']); // ✅ Admin panel ka route
   }
-    // Redirect to main page
+  else if (role === 'customer') {
+    this.router.navigate(['/index-2']); // ✅ Normal user dashboard
+  }
+}
 
-    
-  }
 }

@@ -17,9 +17,6 @@ export class ApplicationDetailComponent  {
     this.applicationId = +this.route.snapshot.paramMap.get('id')!;
     this.findbyId();
   }
-
-  
-
   public findbyId() {
     this.applicationService.findById(this.applicationId).subscribe(
       (successResponse) => {

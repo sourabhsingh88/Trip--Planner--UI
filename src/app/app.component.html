@@ -2,13 +2,22 @@
 <p>isLoggedIn: {{ isLoggedIn }}</p>
 <p>userRole: {{ userRole }}</p> -->
 
-<!-- Navbars -->
-<app-navbar *ngIf="!isLoggedIn"></app-navbar>
-<app-navbar-user *ngIf="isLoggedIn && userRole === 'customer'"></app-navbar-user>
-<app-navbar-planner *ngIf="isLoggedIn && userRole === 'tripplanner'"></app-navbar-planner>
+<!-- ✨ ONLY Show This for NON-ADMIN -->
+<ng-container *ngIf="userRole !== 'admin'">
+    <!-- Navbars -->
+    <app-navbar *ngIf="!isLoggedIn"></app-navbar>
+    <app-navbar-user *ngIf="isLoggedIn && userRole === 'customer'"></app-navbar-user>
+    <app-navbar-planner *ngIf="isLoggedIn && userRole === 'tripplanner'"></app-navbar-planner>
 
+    <router-outlet></router-outlet>
 
+    <app-footer></app-footer>
+    <ngx-scrolltop></ngx-scrolltop>
+</ng-container>
 
-<router-outlet></router-outlet>
-<app-footer></app-footer>
-<ngx-scrolltop></ngx-scrolltop>
+<!-- ✨ ONLY Show This for ADMIN -->
+<ng-container *ngIf="userRole === 'admin'">
+    <!-- ✅ app.component.html -->
+    <router-outlet></router-outlet>
+    <!-- 🔥 Your Admin Panel Layout -->
+</ng-container>

@@ -30,43 +30,55 @@ import { NotificationComponent } from './components/pages/notification/notificat
 import { ApplicationComponent } from './components/pages/application/application.component';
 import { ApplicationDetailComponent } from './components/pages/application-detail/application.detail.component';
 import { ApplicationListComponent } from './components/pages/application-list/application.list';
+import { ProfileUpdateComponent } from './components/pages/profile-update/profile.update.component';
+import { TripCreateComponent } from './components/pages/trip-create/trip-create.component';
+import { TripPreviewComponent } from './components/pages/trip-preview/trip-preview.component';
+import { TripContinueComponent } from './components/pages/trip-continue/trip-continue.component';
+import { TripDiscontinueComponent } from './components/pages/trip-discontinue/trip-discontinue.component';
 
 const routes: Routes = [
-    {path: '', component: HomeDemoTwoComponent},
-    {path: 'index-2', component: HomeDemoTwoComponent},
-    {path: 'user', component: HomeDemoTwoUserComponent},
-    {path: 'about-us', component: AboutPageComponent},
-    {path: 'meet-our-hosts', component: OurHostsPageComponent},
-    {path: 'gallery', component: GalleryPageComponent},
-    {path: 'terms-of-service', component: TermsOfServicePageComponent},
-    {path: 'privacy-policy', component: PrivacyPolicyPageComponent},
-    {path: 'sign-in', component: SignInPageComponent},
-    {path: 'sign-up', component: SignUpPageComponent},
-    {path: 'faq', component: FaqPageComponent},
-    {path: 'shop', component: ShopPageComponent},
-    {path: 'cart', component: CartPageComponent},
-    {path: 'checkout', component: CheckoutPageComponent},
-    {path: 'products-details/:id', component: ProductDetailsPageComponent},
-    {path: 'season-list', component: SeasonListPageComponent},
-    {path: 'single-season', component: SingleSeasonPageComponent},
-    {path: 'episode-list', component: EpisodeListPageComponent},
-    {path: 'single-episode', component: SingleEpisodePageComponent},
-    {path: 'single-video-episode', component: SingleVideoEpisodePageComponent},
-    {path: 'blog', component: BlogPageComponent},
-    {path: 'blog-details', component: BlogDetailsPageComponent},
-    {path: 'contact', component: ContactPageComponent},
-    {path: 'select-role', component: SelectRoleComponent},
-    {path: 'profile', component: ProfileComponent},
-    {path:'booking' ,component: BookingPageComponent},
-    {path:'notification' ,component: NotificationComponent},
-    {path:'application' ,component: ApplicationComponent},
-    {path:'application-detail/:id' ,component: ApplicationDetailComponent},
-    {path:'application-list' ,component: ApplicationListComponent},
-    
-    
+    { path: '', component: HomeDemoTwoComponent },
+    { path: 'index-2', component: HomeDemoTwoComponent },
+    { path: 'user', component: HomeDemoTwoUserComponent },
+    { path: 'about-us', component: AboutPageComponent },
+    { path: 'meet-our-hosts', component: OurHostsPageComponent },
+    { path: 'gallery', component: GalleryPageComponent },
+    { path: 'terms-of-service', component: TermsOfServicePageComponent },
+    { path: 'privacy-policy', component: PrivacyPolicyPageComponent },
+    { path: 'sign-in', component: SignInPageComponent },
+    { path: 'sign-up', component: SignUpPageComponent },
+    { path: 'faq', component: FaqPageComponent },
+    { path: 'shop', component: ShopPageComponent },
+    { path: 'cart', component: CartPageComponent },
+    { path: 'checkout', component: CheckoutPageComponent },
+    { path: 'products-details/:id', component: ProductDetailsPageComponent },
+    { path: 'season-list', component: SeasonListPageComponent },
+    { path: 'single-season', component: SingleSeasonPageComponent },
+    { path: 'episode-list', component: EpisodeListPageComponent },
+    { path: 'single-episode', component: SingleEpisodePageComponent },
+    { path: 'single-video-episode', component: SingleVideoEpisodePageComponent },
+    { path: 'blog', component: BlogPageComponent },
+    { path: 'blog-details', component: BlogDetailsPageComponent },
+    { path: 'contact', component: ContactPageComponent },
+    { path: 'select-role', component: SelectRoleComponent },
+    { path: 'profile', component: ProfileComponent },
+    { path: 'booking', component: BookingPageComponent },
+    { path: 'notification', component: NotificationComponent },
+    { path: 'application', component: ApplicationComponent },
+    { path: 'application-detail/:id', component: ApplicationDetailComponent },
+    { path: 'application-list', component: ApplicationListComponent },
+    { path: 'profile-update/:id', component: ProfileUpdateComponent },
+    { path: 'trip-create', component: TripCreateComponent },
+    { path: 'trip-preview', component: TripPreviewComponent },
+    { path: 'trip-continue', component: TripContinueComponent },
+    { path: 'trip-discontinue', component: TripDiscontinueComponent },
+    { path: 'admin', loadChildren: () => import('./components/admin/admin.module').then(m => m.AdminModule) },
+
+
+
     // Here add new pages component
 
-    {path: '**', component: NotFoundComponent} // This line will remain down from the whole pages component list
+    { path: '**', component: NotFoundComponent } // This line will remain down from the whole pages component list
 ];
 
 @NgModule({

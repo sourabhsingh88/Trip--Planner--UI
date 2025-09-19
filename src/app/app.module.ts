@@ -75,6 +75,23 @@ import { ApplicationService } from './service/application-service';
 import { ApplicationDetailComponent } from './components/pages/application-detail/application.detail.component';
 import { ApplicationListComponent } from './components/pages/application-list/application.list';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { ProfileUpdateComponent } from './components/pages/profile-update/profile.update.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { CityService } from './service/city-service';
+import { StateService } from './service/state-service';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { TripCreateComponent } from './components/pages/trip-create/trip-create.component';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatCardModule } from '@angular/material/card';
+import { TripPreviewComponent } from './components/pages/trip-preview/trip-preview.component';
+import { MatDividerModule } from '@angular/material/divider';
+import { TripContinueComponent } from './components/pages/trip-continue/trip-continue.component';
+import { TripDiscontinueComponent } from './components/pages/trip-discontinue/trip-discontinue.component';
+import { AdminModule } from './components/admin/admin.module';
+
 
 
 
@@ -97,7 +114,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 		SubscribeComponent,
 		SupportOurChannelComponent,
 		TestimonialsComponent,
-  		MustWatchEpisodesComponent,
+		MustWatchEpisodesComponent,
 		ContactPageComponent,
 		BookingPageComponent,
 		NotFoundComponent,
@@ -125,32 +142,47 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 		NavbarPlannerComponent,
 		SelectRoleComponent,
 		ProfileComponent,
-  		ConfirmDialogComponent,
+		ConfirmDialogComponent,
 		NotificationComponent,
 		ApplicationComponent,
 		ApplicationDetailComponent,
-		ApplicationListComponent
+		ApplicationListComponent,
+		ProfileUpdateComponent,
+		TripCreateComponent,
+		TripPreviewComponent,
+		TripContinueComponent,
+		TripDiscontinueComponent,
 	],
 	imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        CarouselModule,
-        FormsModule,
-        ReactiveFormsModule,
-        NgxScrollTopModule,
+		BrowserModule,
+		AppRoutingModule,
+		BrowserAnimationsModule,
+		CarouselModule,
+		FormsModule,
+		ReactiveFormsModule,
+		NgxScrollTopModule,
 		LightgalleryModule,
 		HttpClientModule,
 		MatSelectModule,
 		MatIconModule,
-		MatDialogModule,    
-    	MatButtonModule,
+		MatDialogModule,
+		MatButtonModule,
 		InfiniteScrollModule,
-		MatTooltipModule
-
+		MatTooltipModule,
+		MatFormFieldModule,
+		MatInputModule,
+		MatDatepickerModule,
+		MatNativeDateModule,
+		MatSnackBarModule,
+		MatExpansionModule,
+		MatCardModule,
+		MatDividerModule,
+		AdminModule,
+		 
+    
 	],
-	providers:[
-        UserService,
+	providers: [
+		UserService,
 		TripService,
 		AboutUsService,
 		GalleryService,
@@ -158,7 +190,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 		TripPlannerService,
 		NotificationService,
 		ApplicationService,
-    ],
+		StateService,
+		CityService
+	],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }

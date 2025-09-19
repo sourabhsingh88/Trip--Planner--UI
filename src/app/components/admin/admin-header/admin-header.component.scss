@@ -1,0 +1,55 @@
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f4f6f9;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+
+  .left-section {
+    h2 {
+      font-size: 24px;
+      font-weight: 600;
+      margin: 0;
+      color: #333;
+
+      .admin-name {
+        color: #1976d2;
+      }
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #777;
+      margin-top: 4px;
+    }
+  }
+
+  .right-section {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #555;
+
+    .datetime-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+      padding: 10px 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+      mat-icon {
+        font-size: 18px;
+        color: #1976d2;
+      }
+
+      span {
+        min-width: 80px;
+      }
+    }
+  }
+}

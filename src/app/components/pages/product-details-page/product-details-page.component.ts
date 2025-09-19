@@ -18,34 +18,35 @@ export class ProductDetailsPageComponent implements OnInit {
 
   tripId!: number;
   public tripResponseList: any = {};
+  role: string | null = null;
+  tripStatus: string = '';
 
   constructor(private route: ActivatedRoute,
-    private tripService: TripService, 
+    private tripService: TripService,
     private bookingService: BookingService,
     private http: HttpClient,
     private router: Router,
     private dialog: MatDialog) { }
 
   ngOnInit(): void {
-    // Simulate backend image URLs load (replace with real API call)
-    
+    this.role = localStorage.getItem('role');
     this.tripId = +this.route.snapshot.paramMap.get('id')!;
-    this.findById(); // Fetch trip details by ID
+    this.findById();
   }
 
- prevSlide(): void {
-  const banners = this.tripResponseList?.tripBannerResponseModals;
-  if (banners && banners.length > 0) {
-    this.currentIndex = (this.currentIndex - 1 + banners.length) % banners.length;
+  prevSlide(): void {
+    const banners = this.tripResponseList?.tripBannerResponseModals;
+    if (banners && banners.length > 0) {
+      this.currentIndex = (this.currentIndex - 1 + banners.length) % banners.length;
+    }
   }
-}
 
-nextSlide(): void {
-  const banners = this.tripResponseList?.tripBannerResponseModals;
-  if (banners && banners.length > 0) {
-    this.currentIndex = (this.currentIndex + 1) % banners.length;
+  nextSlide(): void {
+    const banners = this.tripResponseList?.tripBannerResponseModals;
+    if (banners && banners.length > 0) {
+      this.currentIndex = (this.currentIndex + 1) % banners.length;
+    }
   }
-}
 
   // Set current image by dot index
   selectImage(index: number): void {
@@ -53,21 +54,22 @@ nextSlide(): void {
   }
 
 
-  
 
-  public findById(){
-  this.tripService.findById(this.tripId).subscribe(
-      (successResponse) =>{
-          console.log(successResponse);
-          this.tripResponseList = successResponse.data;
+
+  public findById() {
+    this.tripService.findById(this.tripId).subscribe(
+      (successResponse) => {
+        console.log(successResponse);
+        this.tripResponseList = successResponse.data;
+        this.tripStatus = this.tripResponseList.statusName || ''; 
       },
-      (errorResponse) =>{
-          console.log(errorResponse);
+      (errorResponse) => {
+        console.log(errorResponse);
       }
-  );
-}
+    );
+  }
 
-bookTrip() {
+  bookTrip() {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       width: '350px',
       panelClass: 'custom-dialog-container'
@@ -75,10 +77,22 @@ bookTrip() {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-         this.confirmBooking();
+        this.confirmBooking();
       }
     });
-   }
+  }
+  toggelStatus() {
+    this.tripService.toggleTripStatus(this.tripId).subscribe({
+      next: (res: any) => {
+        alert("Trip status updated successfully");
+        this.findById(); 
+      },
+      error: (err) => {
+        console.error('Status update failed:', err);
+        alert("❌ Failed to update trip status. Please try again.");
+      } 
+    });
+  }
   confirmBooking() {
     const userId = localStorage.getItem('userId');
 
@@ -105,5 +119,5 @@ bookTrip() {
         }
       });
   }
-   
-  }
+
+}

@@ -49,9 +49,10 @@
                     </li>
                     
                     <li class="nav-item dropdown profile-photo">
-                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown" role="button"
+                    <a class="nav-link dropdown-toggle d-flex align-items-center" routerLink="/profile" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="assets/images/atul.png" alt="Profile" class="rounded-circle profile-img">
+                       <img [src]="userPhotoUrl" alt="Profile" class="rounded-circle profile-img">
+
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" routerLink="/profile">My Profile</a></li>

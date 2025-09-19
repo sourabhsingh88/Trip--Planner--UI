@@ -1,44 +1,79 @@
-
-
 <!-- Products -->
-<form >
+<form>
+    <!-- Search Bar -->
     <div class="search-bar">
-    <form >
-            <input type="text" class="input-search" [(ngModel)]="filterData.keyword" name="keyword" placeholder="Search here..." (input)="onFilterChange()" />
-            </form>
+        <form>
+            <input type="text" class="input-search" [(ngModel)]="filterData.keyword" name="keyword"
+                placeholder="Search here..." (input)="onFilterChange()" />
+            <button type="submit">
+                <mat-icon>search</mat-icon>
+            </button>
+        </form>
     </div>
+
+
 
 
     <div style="display: flex; justify-content: center ; margin-top: 100px; gap: 100px;">
 
-        <div class="custom-select">
-            <input type="text" [(ngModel)]="filterData.to" class="custom-search" placeholder="TO :" (input)="onFilterChange()"/>
-        </div>
-        <div class="custom-select" style="width:200px;">
-            <input type="text" [(ngModel)]="filterData.from" class="custom-search" name="from" placeholder="From" (input)="onFilterChange()" />
+
+        <div class="custom-select" style="width: 200px;">
+            <mat-form-field appearance="fill" style="width: 100%;">
+                <mat-label>From</mat-label>
+                <input matInput type="text" [(ngModel)]="filterData.from" name="from" placeholder="From"
+                    (input)="onFilterChange()" />
+            </mat-form-field>
         </div>
 
-        <div class="custom-select" style="width:200px;">
-            <input type="text" [(ngModel)]="filterData.duration" class="custom-search" name="duration" placeholder="Duration :" (input)="onFilterChange()"/>
+
+        <div class="custom-select" style="width: 200px;">
+            <mat-form-field appearance="fill" style="width: 100%;">
+                <mat-label>To</mat-label>
+                <input matInput type="text" [(ngModel)]="filterData.to" name="to" placeholder="To"
+                    (input)="onFilterChange()" />
+            </mat-form-field>
         </div>
-        <div class="custom-select" style="width:200px;">
-            <input type="text" class="custom-search" placeholder="Price : ">
+
+
+        <div class="custom-select" style="width: 250px;">
+            <mat-form-field appearance="fill" style="width: 100%;">
+                <mat-label>Duration</mat-label>
+                <mat-select [(ngModel)]="selectedDurationRange" (selectionChange)="onDurationRangeChange($event.value)">
+                    <mat-option [value]="null">All Durations</mat-option>
+                    <mat-option *ngFor="let range of durationRanges" [value]="range">
+                        {{ range.start }} - {{ range.end }} days
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
         </div>
-        
-        
+
+        <div class="custom-select" style="width: 250px;">
+            <mat-form-field appearance="fill" style="width: 100%;">
+                <mat-label>Price Range</mat-label>
+                <mat-select [(ngModel)]="selectedPriceRange" (selectionChange)="onPriceRangeChange($event.value)">
+                    <mat-option *ngFor="let range of priceRanges" [value]="range">
+                        ₹{{ range.start }} - ₹{{ range.end }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+
+
     </div>
-</form>  
+</form>
 
-  
+
 <div class="products-area ptb-100">
     <div class="container">
         <div class="row justify-content-center ">
             <div class="col-lg-3 col-sm-6" *ngFor="let trip of trips">
                 <div class="single-products-card style-two">
-                    <div class="products-image"> 
+                    <div class="products-image">
 
                         <a [routerLink]="['/products-details', trip.id]">
-                            <img [src]="'http://localhost:1002/booking-service-api-local/trips/' + trip.imgURL " alt="image">
+                            <img [src]="'http://localhost:1002/booking-service-api-local/trips/' + trip.imgURL "
+                                alt="image">
 
                         </a>
                     </div>
@@ -58,35 +93,22 @@
                     </ul>
                 </div>
             </div>
- <div class="col-lg-12 col-md-12">
-  <div class="pagination-area">
-    <div class="nav-links">
-      <a 
-        class="prev page-numbers" 
-        (click)="prevPage()" 
-        [class.disabled]="page === 0"
-        style="cursor: pointer;"
-      >Prev</a>
+            <div class="col-lg-12 col-md-12">
+                <div class="pagination-area">
+                    <div class="nav-links">
+                        <a class="prev page-numbers" (click)="prevPage()" [class.disabled]="page === 0"
+                            style="cursor: pointer;">Prev</a>
 
-      <span 
-        class="page-numbers" 
-        *ngFor="let p of totalPagesArray; let i = index"
-        [class.current]="i === page"
-        (click)="goToPage(i)"
-        style="cursor: pointer;"
-      >
-        {{ i + 1 }}
-      </span>
+                        <span class="page-numbers" *ngFor="let p of totalPagesArray; let i = index"
+                            [class.current]="i === page" (click)="goToPage(i)" style="cursor: pointer;">
+                            {{ i + 1 }}
+                        </span>
 
-      <a 
-        class="next page-numbers" 
-        (click)="nextPage()" 
-        [class.disabled]="page >= totalPages - 1"
-        style="cursor: pointer;"
-      >Next</a>
-    </div>
-  </div>
-</div>
+                        <a class="next page-numbers" (click)="nextPage()" [class.disabled]="page >= totalPages - 1"
+                            style="cursor: pointer;">Next</a>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>

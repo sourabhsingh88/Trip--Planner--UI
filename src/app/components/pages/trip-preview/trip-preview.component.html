@@ -1,0 +1,73 @@
+<div class="preview-container">
+  <h2>📋 Trip Preview</h2>
+
+  <div class="main-image-wrapper" *ngIf="imagePreview">
+    <img [src]="imagePreview" alt="Trip Image" class="main-image" />
+  </div>
+
+  <div class="trip-details card">
+    <h3>{{ tripData.name }}</h3>
+    <div class="grid">
+      <div><strong>From:</strong></div> <div>{{ tripData.from }}</div>
+      <div><strong>To:</strong></div> <div>{{ tripData.to }}</div>
+      <div><strong>Location:</strong></div> <div>{{ tripData.location }}</div>
+      <div><strong>Duration:</strong></div> <div>{{ tripData.duration }} days</div>
+      <div><strong>Tour Guide:</strong></div> <div>{{ tripData.tourGuideName }}</div>
+      <div><strong>Start Date:</strong></div> <div>{{ tripData.startDate | date }}</div>
+      <div><strong>End Date:</strong></div> <div>{{ tripData.endDate | date }}</div>
+      <div><strong>Price:</strong></div> <div>₹{{ tripData.price }}</div>
+      <div class="full"><strong>Description:</strong> {{ tripData.description }}</div>
+    </div>
+  </div>
+
+  <div class="section card" *ngIf="tripData.accommodations?.length">
+    <h3>🏨 Accommodations</h3>
+    <div *ngFor="let acc of tripData.accommodations" class="entry-grid">
+      <div><strong>Name:</strong></div> <div>{{ acc.name }}</div>
+      <div><strong>Email:</strong></div> <div>{{ acc.email }}</div>
+      <div><strong>Phone:</strong></div> <div>{{ acc.phoneNumber }}</div>
+      <div><strong>Capacity:</strong></div> <div>{{ acc.capacity }}</div>
+      <div><strong>Type:</strong></div> <div>{{ acc.type }}</div>
+      <div class="full"><strong>Description:</strong> {{ acc.description }}</div>
+    </div>
+  </div>
+
+  <div class="section card" *ngIf="tripData.activities?.length">
+    <h3>🎯 Activities</h3>
+    <div *ngFor="let act of tripData.activities" class="entry-grid">
+      <div><strong>Name:</strong></div> <div>{{ act.name }}</div>
+      <div><strong>Date:</strong></div> <div>{{ act.activityDate }}</div>
+      <div class="full"><strong>Description:</strong> {{ act.description }}</div>
+    </div>
+  </div>
+
+  <div class="section card" *ngIf="tripData.meals?.length">
+    <h3>🍽 Meals</h3>
+    <div *ngFor="let meal of tripData.meals" class="entry-grid">
+      <div><strong>Name:</strong></div> <div>{{ meal.name }}</div>
+      <div class="full"><strong>Description:</strong> {{ meal.description }}</div>
+    </div>
+  </div>
+
+  <div class="section card" *ngIf="tripData.transports?.length">
+    <h3>🚗 Transport</h3>
+    <div *ngFor="let t of tripData.transports" class="entry-grid">
+      <div><strong>Name:</strong></div> <div>{{ t.name }}</div>
+      <div class="full"><strong>Description:</strong> {{ t.description }}</div>
+    </div>
+  </div>
+
+  <div class="section card" *ngIf="bannerPreviews?.length">
+    <h3>🖼 Trip Banners</h3>
+    <div class="banner-list">
+      <img *ngFor="let banner of bannerPreviews" [src]="banner" class="banner-img" />
+    </div>
+  </div>
+
+  <!-- Inside trip-preview.component.html -->
+<div class="button-row">
+  <button mat-stroked-button color="warn" (click)="goBackToEdit()">← Back to Edit</button>
+  <button mat-raised-button color="primary" (click)="submitToApi()">✅ Confirm & Submit</button>
+</div>
+
+</div>

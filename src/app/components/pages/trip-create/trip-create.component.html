@@ -1,0 +1,179 @@
+<div class="trip-form-container">
+  <form [formGroup]="tripForm" enctype="multipart/form-data">
+    <!-- Trip Info -->
+    <div class="section">
+      <h2>Create New Trip</h2>
+      <div class="horizontal-form">
+        <mat-form-field appearance="outline"><mat-label>Trip Name</mat-label><input matInput
+            formControlName="name" /></mat-form-field>
+        <mat-form-field appearance="outline"><mat-label>Duration (days)</mat-label><input matInput type="number"
+            formControlName="duration" /></mat-form-field>
+        <mat-form-field appearance="outline"><mat-label>From</mat-label><input matInput
+            formControlName="from" /></mat-form-field>
+        <mat-form-field appearance="outline"><mat-label>To</mat-label><input matInput
+            formControlName="to" /></mat-form-field>
+        <mat-form-field appearance="outline"><mat-label>Price</mat-label><input matInput type="number"
+            formControlName="price" /></mat-form-field>
+        <mat-form-field appearance="outline"><mat-label>Tour Guide Name</mat-label><input matInput
+            formControlName="tourGuideName" /></mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>State</mat-label>
+          <mat-select formControlName="state" (selectionChange)="onStateChange($event.value)">
+            <mat-option *ngFor="let state of states" [value]="state.id">{{ state.stateName }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>City</mat-label>
+          <mat-select formControlName="city" [disabled]="!cities || !cities.length">
+            <mat-option *ngFor="let city of cities" [value]="city.id">{{ city.name }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+
+
+        <mat-form-field appearance="outline">
+          <mat-label>Location</mat-label>
+          <input matInput formControlName="location" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline"><mat-label>Start Date</mat-label><input matInput
+            [matDatepicker]="startPicker" formControlName="startDate" /><mat-datepicker-toggle matSuffix
+            [for]="startPicker"></mat-datepicker-toggle><mat-datepicker #startPicker></mat-datepicker></mat-form-field>
+        <mat-form-field appearance="outline"><mat-label>End Date</mat-label><input matInput [matDatepicker]="endPicker"
+            formControlName="endDate" /><mat-datepicker-toggle matSuffix
+            [for]="endPicker"></mat-datepicker-toggle><mat-datepicker #endPicker></mat-datepicker></mat-form-field>
+      </div>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description" rows="3"></textarea>
+      </mat-form-field>
+
+      <div class="upload-section">
+        <label for="tripImage" class="upload-label">
+          <mat-icon>upload</mat-icon> Upload Trip Image
+        </label>
+        <input type="file" id="tripImage" (change)="onImageSelect($event)" accept="image/*" hidden />
+
+        <div class="image-preview" *ngIf="tripImagePreview">
+          <img [src]="tripImagePreview" alt="Trip Image Preview" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Accommodations -->
+    <div class="section">
+      <h3>🏨 Accommodations</h3>
+      <div *ngFor="let acc of accommodations.controls; let i = index" class="dynamic-entry-wrapper">
+        <div [formGroup]="getAccommodationFormGroup(i)" class="horizontal-form">
+          <mat-form-field appearance="outline"><mat-label>Name</mat-label><input matInput
+              formControlName="name" /></mat-form-field>
+          <mat-form-field appearance="outline"><mat-label>Email</mat-label><input matInput
+              formControlName="email" /></mat-form-field>
+          <mat-form-field appearance="outline"><mat-label>Phone</mat-label><input matInput
+              formControlName="phoneNumber" /></mat-form-field>
+          <mat-form-field appearance="outline"><mat-label>Capacity</mat-label><input matInput type="number"
+              formControlName="capacity" /></mat-form-field>
+          <mat-form-field appearance="outline"><mat-label>Type</mat-label><input matInput
+              formControlName="type" /></mat-form-field>
+          <mat-form-field appearance="outline"><mat-label>Description</mat-label><textarea matInput
+              formControlName="description"></textarea></mat-form-field>
+          <button mat-icon-button color="warn" (click)="removeAccommodation(i)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+      <button mat-stroked-button (click)="addAccommodation()" class="add-btn"> <mat-icon>add</mat-icon>Add
+        Accommodation</button>
+    </div>
+
+    <!-- Activities -->
+    <div class="section">
+      <h3>🎯 Activities</h3>
+      <div *ngFor="let act of activities.controls; let i = index" class="dynamic-entry-wrapper">
+        <div [formGroup]="getActivityFormGroup(i)" class="horizontal-form">
+          <mat-form-field appearance="outline"><mat-label>Name</mat-label><input matInput
+              formControlName="name" /></mat-form-field>
+          <mat-form-field appearance="outline"><mat-label>Date</mat-label><input matInput type="date"
+              formControlName="activityDate" /></mat-form-field>
+          <mat-form-field appearance="outline"><mat-label>Description</mat-label><textarea matInput
+              formControlName="description"></textarea></mat-form-field>
+          <button mat-icon-button color="warn" (click)="removeActivity(i)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+      <button mat-stroked-button (click)="addActivity()" class="add-btn"> <mat-icon>add</mat-icon>Add Activity</button>
+    </div>
+
+    <!-- Meals -->
+    <div class="section">
+      <h3>🍴 Meals</h3>
+      <div *ngFor="let meal of meals.controls; let i = index" class="dynamic-entry-wrapper">
+        <div [formGroup]="getMealFormGroup(i)" class="horizontal-form">
+          <mat-form-field appearance="outline"><mat-label>Name</mat-label><input matInput
+              formControlName="name" /></mat-form-field>
+          <mat-form-field appearance="outline"><mat-label>Description</mat-label><textarea matInput
+              formControlName="description"></textarea></mat-form-field>
+          <button mat-icon-button color="warn" (click)="removeMeal(i)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+      <button mat-stroked-button (click)="addMeal()" class="add-btn"> <mat-icon>add</mat-icon>Add Meal</button>
+    </div>
+
+    <!-- Transport -->
+    <div class="section">
+      <h3>🚗 Transport</h3>
+      <div *ngFor="let transport of transports.controls; let i = index" class="dynamic-entry-wrapper">
+        <div [formGroup]="getTransportFormGroup(i)" class="horizontal-form">
+          <mat-form-field appearance="outline"><mat-label>Name</mat-label><input matInput
+              formControlName="name" /></mat-form-field>
+          <mat-form-field appearance="outline"><mat-label>Description</mat-label><textarea matInput
+              formControlName="description"></textarea></mat-form-field>
+          <button mat-icon-button color="warn" (click)="removeTransport(i)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+      <button mat-stroked-button (click)="addTransport()" class="add-btn">
+        <mat-icon>add</mat-icon>
+        Add Transport</button>
+    </div>
+
+    <!-- Banners -->
+    <div class="section">
+      <h3>🖼 Trip Banners</h3>
+      <div *ngFor="let banner of banners.controls; let i = index" class="dynamic-entry-wrapper">
+        <div [formGroup]="getBannerFormGroup(i)" class="banner-upload-row">
+          <label class="banner-upload-label" for="bannerUpload{{ i }}">
+            <mat-icon>upload</mat-icon> Upload Banner Image
+          </label>
+          <input type="file" id="bannerUpload{{ i }}" (change)="onBannerFileChange($event, i)" accept="image/*"
+            hidden />
+
+          <div class="image-preview" *ngIf="bannerPreviews[i]">
+            <img [src]="bannerPreviews[i]" alt="Banner Image Preview" />
+          </div>
+
+          <button mat-icon-button color="warn" (click)="removeBanner(i)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+      <button mat-stroked-button (click)="addBanner()" class="add-btn"> <mat-icon>add</mat-icon>Add Banner</button>
+    </div>
+
+    <!-- Submit -->
+    <div class="submit-btn-wrapper">
+      <button mat-raised-button color="primary" class="submit-btn" type="button" (click)="submitTrip()">
+        Create Trip
+      </button>
+
+    </div>
+
+  </form>
+</div>

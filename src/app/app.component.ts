@@ -16,7 +16,7 @@ declare let $: any;
         }
     ]
 })
-export class AppComponent  implements OnInit{
+export class AppComponent implements OnInit {
 
     title = 'Goca - Angular 16 Podcast Theme + Admin Dashboard';
 
@@ -27,42 +27,35 @@ export class AppComponent  implements OnInit{
 
     isLoggedIn = false;
     userRole: string | null = null;
-    constructor(private router: Router,private userService: UserService) {
-        
+    constructor(private router: Router, private userService: UserService) {
+
     }
 
     ngOnInit() {
-  this.recallJsFuntions();
+        this.recallJsFuntions();
+        this.isLoggedIn = this.userService.isLoggedIn();
+        this.userRole = this.userService.getRole();
+        this.userService.role$.subscribe(role => {
+            console.log("Role updated via service stream: ", role);
+            this.userRole = role;
+            this.isLoggedIn = this.userService.isLoggedIn();  // 🔥 Add this line
+        });
 
-  // Step 1: check login
-  this.isLoggedIn = this.userService.isLoggedIn();
-
-  // Step 2: Try to fetch directly from localStorage (on page reload)
-  this.userRole = this.userService.getRole();
-//   this.userRole = localStorage.getItem('role');
-
-  // Step 3: Subscribe to service stream (for future changes)
-  this.userService.role$.subscribe(role => {
-    console.log("Role updated via service stream: ", role);
-    this.userRole = role;
-    this.isLoggedIn = this.userService.isLoggedIn();  // 🔥 Add this line
-  });
-
-  console.log("User from localStorage:", localStorage.getItem('user'));
-  console.log("Role from localStorage:", this.userRole);
-  console.log("isLoggedIn:", this.isLoggedIn);
-}
+        console.log("User from localStorage:", localStorage.getItem('user'));
+        console.log("Role from localStorage:", this.userRole);
+        console.log("isLoggedIn:", this.isLoggedIn);
+    }
 
     recallJsFuntions() {
         this.routerSubscription = this.router.events
-        .pipe(filter(event => event instanceof NavigationEnd || event instanceof NavigationCancel))
-        .subscribe(event => {
-            this.location = this.router.url;
-            if (!(event instanceof NavigationEnd)) {
-                return;
-            }
-            window.scrollTo(0, 0);
-        });
+            .pipe(filter(event => event instanceof NavigationEnd || event instanceof NavigationCancel))
+            .subscribe(event => {
+                this.location = this.router.url;
+                if (!(event instanceof NavigationEnd)) {
+                    return;
+                }
+                window.scrollTo(0, 0);
+            });
     }
 
 }

@@ -26,17 +26,17 @@
                     <li class="nav-item">
                         <a href="javascript:void(0)" class="nav-link dropdown-toggle">MY Packages</a>
                         <ul class="dropdown-menu">
-                            <li class="nav-item"><a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Continue Packages</a></li>
-                            <li class="nav-item"><a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Discontinue Packages</a></li>
+                            <li class="nav-item"><a routerLink="/trip-continue" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Continue Packages</a></li>
+                            <li class="nav-item"><a routerLink="/trip-discontinue" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Discontinue Packages</a></li>
                         </ul>
                     </li>
                     
                     <li class="nav-item">
-                        <a routerLink="/gallery" class="nav-link" routerLinkActive="active"
+                        <a routerLink="/trip-create" class="nav-link" routerLinkActive="active"
                             [routerLinkActiveOptions]="{exact: true}">ADD Packages</a>
                     </li>
 
-                    <li class="nav-item"><a routerLink="/contact" class="nav-link" routerLinkActive="active"
+                    <li class="nav-item"><a routerLink="/booking" class="nav-link" routerLinkActive="active"
                         [routerLinkActiveOptions]="{exact: true}" (click)="toggleClass()">Bookings</a></li>
 
                     
@@ -52,9 +52,9 @@
                     </li> 
                     
                     <li class="nav-item dropdown profile-photo">
-                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown" role="button"
+                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="/profile" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="assets/images/atul.png" alt="Profile" class="rounded-circle profile-img">
+                        <img [src]="userPhotoUrl" alt="Profile" class="rounded-circle profile-img">
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" routerLink="/profile">My Profile</a></li>

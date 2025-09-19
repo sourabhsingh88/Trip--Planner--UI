@@ -14,24 +14,39 @@ export class NotificationComponent implements OnInit {
   size = 5;
   loading = false;
   lastPage = false;
+  roleIdMap: { [key: string]: number } = {
+    customer: 1,
+    tripplanner: 2,
+    admin: 3
+  };
+
+  roleName: string | null = null;
+  roleId: number = 0;
+
 
   constructor(private notificationService: NotificationService) { }
 
   ngOnInit(): void {
-    this.getNotifications(this.userId);
+    this.roleName = localStorage.getItem('role');
+    if (this.roleName && this.roleIdMap[this.roleName]) {
+    this.roleId = this.roleIdMap[this.roleName];
+  }
+    this.getNotifications(this.userId,this.roleId);
     window.addEventListener('scroll', this.onScroll, true);
   }
 
+
   // ✅ Load notifications with pagination
-  getNotifications(receiverId: number): void {
+  getNotifications(receiverId: number,receiverRoleId: number): void {
     if (this.loading || this.lastPage) return;
 
     this.loading = true;
-    this.notificationService.findAllByReceiverId(receiverId, this.page, this.size).subscribe(
+    this.notificationService.findAllByReceiverId(receiverId,receiverRoleId, this.page, this.size).subscribe(
       (response) => {
         const newNotifs = response.data || [];
 
         this.notifications.push(...newNotifs);
+        this.notificationService.updateNotificationCount(response.totalRecords);
 
         if (newNotifs.length < this.size || this.notifications.length >= response.totalRecords) {
           this.lastPage = true;
@@ -52,20 +67,20 @@ export class NotificationComponent implements OnInit {
 
 
   onNotificationClick(notif: any): void {
-    
-    
-      this.notificationService.markAsRead(notif.id).subscribe({
-        next: () => {
-          
-          this.notifications = [];
-          this.page = 0;
-          this.lastPage = false;
-          this.getNotifications(this.userId);
-        },
-        error: (err) => {
-          console.error("❌ Error marking notification as read:", err);
-        }
-      });
+
+
+    this.notificationService.markAsRead(notif.id).subscribe({
+      next: () => {
+
+        this.notifications = [];
+        this.page = 0;
+        this.lastPage = false;
+        this.getNotifications(this.userId,this.roleId);
+      },
+      error: (err) => {
+        console.error("❌ Error marking notification as read:", err);
+      }
+    });
   }
 
   // ✅ Lazy scroll loading
@@ -76,7 +91,7 @@ export class NotificationComponent implements OnInit {
     const bodyHeight = document.body.offsetHeight;
 
     if ((scrollTop + windowHeight + threshold) >= bodyHeight) {
-      this.getNotifications(this.userId);
+      this.getNotifications(this.userId,this.roleId);
     }
   };
 
